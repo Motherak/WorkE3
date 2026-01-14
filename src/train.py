@@ -705,7 +705,7 @@ def main():
             }, step=data_args.iteration)
         else:
             logger.info("W&B not initialized -> skip wandb.log(eval)")
-
+    # fixed
     if wandb.run is not None:
         wandb.log({"data_selection_strategy": data_args.data_selection_strategy})
     else:
