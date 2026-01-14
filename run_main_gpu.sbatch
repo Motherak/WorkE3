@@ -17,4 +17,5 @@ export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export WANDB_MODE=offline
 
-python main.py
+python main.py hydra.job.chdir=false
+
