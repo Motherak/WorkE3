@@ -175,3 +175,7 @@ checkpoints
 __pycache__
 outputs/
 detectors
+# Slurm / HPC logs
+mc_main-*.out
+slurm-*.out
+*.err
