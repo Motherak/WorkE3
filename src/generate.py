@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import torch
+from pathlib import Path # for offline Path handling
 from datasets import load_dataset, Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from utils.utils import preprocess_and_tokenize_data, get_context, get_text_to_classify, decode
@@ -152,9 +153,17 @@ def main():
         else getattr(torch, args.torch_dtype)
     )
     
-    model = AutoModelForCausalLM.from_pretrained(args.model_path, 
-                                                    torch_dtype=torch_dtype, 
-                                                    low_cpu_mem_usage=args.low_cpu_mem_usage)
+    model_dir = Path(args.model_path).expanduser().resolve()
+    if not model_dir.is_dir():
+        raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+
+    model = AutoModelForCausalLM.from_pretrained(
+        str(model_dir),
+        torch_dtype=torch_dtype,
+        low_cpu_mem_usage=args.low_cpu_mem_usage,
+        local_files_only=True,
+        use_safetensors=False,
+    )
     model.to(args.device)
     model.eval()
 
