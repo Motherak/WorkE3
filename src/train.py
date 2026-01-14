@@ -417,6 +417,15 @@ def main():
             else getattr(torch, model_args.torch_dtype)
         )
 
+        offline = (
+            os.environ.get("TRANSFORMERS_OFFLINE") == "1"
+            or os.environ.get("HF_HUB_OFFLINE") == "1"
+            or os.environ.get("HF_DATASETS_OFFLINE") == "1"
+        )
+        # GPT-2 vom Hub hat i.d.R. KEINE safetensors -> explizit deaktivieren,
+        # aber nur für diese Hub-ID (damit lokale final_model Ordner weiterhin auto erkennen können)
+        force_no_safetensors = model_args.model_name_or_path in {"gpt2", "openai-community/gpt2"}
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_args.model_name_or_path,
             from_tf=bool(".ckpt" in model_args.model_name_or_path),
@@ -427,6 +436,9 @@ def main():
             trust_remote_code=model_args.trust_remote_code,
             torch_dtype=torch_dtype,
             low_cpu_mem_usage=model_args.low_cpu_mem_usage,
+                # >>> NEU:
+            local_files_only=offline,
+            use_safetensors=False if force_no_safetensors else None,
         )
     else:
         model = AutoModelForCausalLM.from_config(config, trust_remote_code=model_args.trust_remote_code)
