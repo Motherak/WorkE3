@@ -1,0 +1,1973 @@
+### Starting TaskPrologue of job 3271732 on a0601 at Wed Jan 14 14:51:25 CET 2026
+Running on cores 0-15 with governor ondemand
+Wed Jan 14 14:51:25 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   36C    P0             55W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+/var/tmp/slurmd_spool/job3271732/slurm_script: line 9: module: command not found
+/var/tmp/slurmd_spool/job3271732/slurm_script: line 10: module: command not found
+[INFO] Running in WANDB offline mode
+01/14/2026 14:51:42 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:51:42 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/0/model/,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_0,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Using custom data configuration default-2dbfe55f60f14173
+01/14/2026 14:51:42 - INFO - datasets.builder - Using custom data configuration default-2dbfe55f60f14173
+Found cached dataset json (/home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2)
+01/14/2026 14:51:42 - INFO - datasets.builder - Found cached dataset json (/home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2)
+[INFO|hub.py:361] 2026-01-14 14:51:42,691 >> Offline mode: forcing local_files_only=True
+[INFO|configuration_utils.py:744] 2026-01-14 14:51:42,695 >> loading configuration file config.json from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/config.json
+[INFO|configuration_utils.py:816] 2026-01-14 14:51:42,696 >> Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "5.0.0.dev0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|hub.py:361] 2026-01-14 14:51:42,696 >> Offline mode: forcing local_files_only=True
+[INFO|configuration_utils.py:744] 2026-01-14 14:51:42,697 >> loading configuration file config.json from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/config.json
+[INFO|configuration_utils.py:816] 2026-01-14 14:51:42,698 >> Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "5.0.0.dev0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|hub.py:361] 2026-01-14 14:51:42,698 >> Offline mode: forcing local_files_only=True
+[INFO|tokenization_utils_base.py:1605] 2026-01-14 14:51:42,701 >> Offline mode: forcing local_files_only=True
+[INFO|modeling_utils.py:699] 2026-01-14 14:51:42,880 >> loading weights file pytorch_model.bin from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/pytorch_model.bin
+[INFO|configuration_utils.py:1014] 2026-01-14 14:51:42,881 >> Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "use_cache": true
+}
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights:   1%|          | 1/148 [00:00<00:00, 8943.08it/s, Materializing param=transformer.h.0.attn.c_attn.bias]Loading weights:   1%|          | 1/148 [00:00<00:00, 5236.33it/s, Materializing param=transformer.h.0.attn.c_attn.bias]Loading weights:   1%|▏         | 2/148 [00:00<00:00, 387.66it/s, Materializing param=transformer.h.0.attn.c_attn.weight]Loading weights:   1%|▏         | 2/148 [00:00<00:00, 374.31it/s, Materializing param=transformer.h.0.attn.c_attn.weight]Loading weights:   2%|▏         | 3/148 [00:00<00:00, 292.92it/s, Materializing param=transformer.h.0.attn.c_proj.bias]  Loading weights:   2%|▏         | 3/148 [00:00<00:00, 289.84it/s, Materializing param=transformer.h.0.attn.c_proj.bias]Loading weights:   3%|▎         | 4/148 [00:00<00:00, 380.45it/s, Materializing param=transformer.h.0.attn.c_proj.weight]Loading weights:   3%|▎         | 4/148 [00:00<00:00, 377.27it/s, Materializing param=transformer.h.0.attn.c_proj.weight]Loading weights:   3%|▎         | 5/148 [00:00<00:00, 465.21it/s, Materializing param=transformer.h.0.ln_1.bias]         Loading weights:   3%|▎         | 5/148 [00:00<00:00, 461.13it/s, Materializing param=transformer.h.0.ln_1.bias]Loading weights:   4%|▍         | 6/148 [00:00<00:00, 546.18it/s, Materializing param=transformer.h.0.ln_1.weight]Loading weights:   4%|▍         | 6/148 [00:00<00:00, 539.16it/s, Materializing param=transformer.h.0.ln_1.weight]Loading weights:   5%|▍         | 7/148 [00:00<00:00, 621.33it/s, Materializing param=transformer.h.0.ln_2.bias]  Loading weights:   5%|▍         | 7/148 [00:00<00:00, 595.79it/s, Materializing param=transformer.h.0.ln_2.bias]Loading weights:   5%|▌         | 8/148 [00:00<00:00, 666.36it/s, Materializing param=transformer.h.0.ln_2.weight]Loading weights:   5%|▌         | 8/148 [00:00<00:00, 654.91it/s, Materializing param=transformer.h.0.ln_2.weight]Loading weights:   6%|▌         | 9/148 [00:00<00:00, 721.91it/s, Materializing param=transformer.h.0.mlp.c_fc.bias]Loading weights:   6%|▌         | 9/148 [00:00<00:00, 716.62it/s, Materializing param=transformer.h.0.mlp.c_fc.bias]Loading weights:   7%|▋         | 10/148 [00:00<00:00, 787.04it/s, Materializing param=transformer.h.0.mlp.c_fc.weight]Loading weights:   7%|▋         | 10/148 [00:00<00:00, 781.62it/s, Materializing param=transformer.h.0.mlp.c_fc.weight]Loading weights:   7%|▋         | 11/148 [00:00<00:00, 850.60it/s, Materializing param=transformer.h.0.mlp.c_proj.bias]Loading weights:   7%|▋         | 11/148 [00:00<00:00, 844.59it/s, Materializing param=transformer.h.0.mlp.c_proj.bias]Loading weights:   8%|▊         | 12/148 [00:00<00:00, 911.81it/s, Materializing param=transformer.h.0.mlp.c_proj.weight]Loading weights:   8%|▊         | 12/148 [00:00<00:00, 902.49it/s, Materializing param=transformer.h.0.mlp.c_proj.weight]Loading weights:   9%|▉         | 13/148 [00:00<00:00, 968.64it/s, Materializing param=transformer.h.1.attn.c_attn.bias] Loading weights:   9%|▉         | 13/148 [00:00<00:00, 962.06it/s, Materializing param=transformer.h.1.attn.c_attn.bias]Loading weights:   9%|▉         | 14/148 [00:00<00:00, 1027.12it/s, Materializing param=transformer.h.1.attn.c_attn.weight]Loading weights:   9%|▉         | 14/148 [00:00<00:00, 1014.64it/s, Materializing param=transformer.h.1.attn.c_attn.weight]Loading weights:  10%|█         | 15/148 [00:00<00:00, 1058.58it/s, Materializing param=transformer.h.1.attn.c_proj.bias]  Loading weights:  10%|█         | 15/148 [00:00<00:00, 1052.68it/s, Materializing param=transformer.h.1.attn.c_proj.bias]Loading weights:  11%|█         | 16/148 [00:00<00:00, 1113.75it/s, Materializing param=transformer.h.1.attn.c_proj.weight]Loading weights:  11%|█         | 16/148 [00:00<00:00, 1108.71it/s, Materializing param=transformer.h.1.attn.c_proj.weight]Loading weights:  11%|█▏        | 17/148 [00:00<00:00, 1169.50it/s, Materializing param=transformer.h.1.ln_1.bias]         Loading weights:  11%|█▏        | 17/148 [00:00<00:00, 1164.44it/s, Materializing param=transformer.h.1.ln_1.bias]Loading weights:  12%|█▏        | 18/148 [00:00<00:00, 1224.61it/s, Materializing param=transformer.h.1.ln_1.weight]Loading weights:  12%|█▏        | 18/148 [00:00<00:00, 1218.94it/s, Materializing param=transformer.h.1.ln_1.weight]Loading weights:  13%|█▎        | 19/148 [00:00<00:00, 1276.83it/s, Materializing param=transformer.h.1.ln_2.bias]  Loading weights:  13%|█▎        | 19/148 [00:00<00:00, 1270.90it/s, Materializing param=transformer.h.1.ln_2.bias]Loading weights:  14%|█▎        | 20/148 [00:00<00:00, 1314.81it/s, Materializing param=transformer.h.1.ln_2.weight]Loading weights:  14%|█▎        | 20/148 [00:00<00:00, 1296.96it/s, Materializing param=transformer.h.1.ln_2.weight]Loading weights:  14%|█▍        | 21/148 [00:00<00:00, 1315.71it/s, Materializing param=transformer.h.1.mlp.c_fc.bias]Loading weights:  14%|█▍        | 21/148 [00:00<00:00, 1294.75it/s, Materializing param=transformer.h.1.mlp.c_fc.bias]Loading weights:  15%|█▍        | 22/148 [00:00<00:00, 1338.73it/s, Materializing param=transformer.h.1.mlp.c_fc.weight]Loading weights:  15%|█▍        | 22/148 [00:00<00:00, 1332.62it/s, Materializing param=transformer.h.1.mlp.c_fc.weight]Loading weights:  16%|█▌        | 23/148 [00:00<00:00, 1369.70it/s, Materializing param=transformer.h.1.mlp.c_proj.bias]Loading weights:  16%|█▌        | 23/148 [00:00<00:00, 1363.38it/s, Materializing param=transformer.h.1.mlp.c_proj.bias]Loading weights:  16%|█▌        | 24/148 [00:00<00:00, 1413.21it/s, Materializing param=transformer.h.1.mlp.c_proj.weight]Loading weights:  16%|█▌        | 24/148 [00:00<00:00, 1407.76it/s, Materializing param=transformer.h.1.mlp.c_proj.weight]Loading weights:  17%|█▋        | 25/148 [00:00<00:00, 1457.59it/s, Materializing param=transformer.h.2.attn.c_attn.bias] Loading weights:  17%|█▋        | 25/148 [00:00<00:00, 1452.20it/s, Materializing param=transformer.h.2.attn.c_attn.bias]Loading weights:  18%|█▊        | 26/148 [00:00<00:00, 1442.98it/s, Materializing param=transformer.h.2.attn.c_attn.weight]Loading weights:  18%|█▊        | 26/148 [00:00<00:00, 1431.97it/s, Materializing param=transformer.h.2.attn.c_attn.weight]Loading weights:  18%|█▊        | 27/148 [00:00<00:00, 1474.83it/s, Materializing param=transformer.h.2.attn.c_proj.bias]  Loading weights:  18%|█▊        | 27/148 [00:00<00:00, 1451.13it/s, Materializing param=transformer.h.2.attn.c_proj.bias]Loading weights:  19%|█▉        | 28/148 [00:00<00:00, 1456.03it/s, Materializing param=transformer.h.2.attn.c_proj.weight]Loading weights:  19%|█▉        | 28/148 [00:00<00:00, 1446.76it/s, Materializing param=transformer.h.2.attn.c_proj.weight]Loading weights:  20%|█▉        | 29/148 [00:00<00:00, 1489.05it/s, Materializing param=transformer.h.2.ln_1.bias]         Loading weights:  20%|█▉        | 29/148 [00:00<00:00, 1447.15it/s, Materializing param=transformer.h.2.ln_1.bias]Loading weights:  20%|██        | 30/148 [00:00<00:00, 1481.70it/s, Materializing param=transformer.h.2.ln_1.weight]Loading weights:  20%|██        | 30/148 [00:00<00:00, 1475.72it/s, Materializing param=transformer.h.2.ln_1.weight]Loading weights:  21%|██        | 31/148 [00:00<00:00, 1505.51it/s, Materializing param=transformer.h.2.ln_2.bias]  Loading weights:  21%|██        | 31/148 [00:00<00:00, 1500.18it/s, Materializing param=transformer.h.2.ln_2.bias]Loading weights:  22%|██▏       | 32/148 [00:00<00:00, 1507.96it/s, Materializing param=transformer.h.2.ln_2.weight]Loading weights:  22%|██▏       | 32/148 [00:00<00:00, 1499.24it/s, Materializing param=transformer.h.2.ln_2.weight]Loading weights:  22%|██▏       | 33/148 [00:00<00:00, 1528.71it/s, Materializing param=transformer.h.2.mlp.c_fc.bias]Loading weights:  22%|██▏       | 33/148 [00:00<00:00, 1523.81it/s, Materializing param=transformer.h.2.mlp.c_fc.bias]Loading weights:  23%|██▎       | 34/148 [00:00<00:00, 1561.42it/s, Materializing param=transformer.h.2.mlp.c_fc.weight]Loading weights:  23%|██▎       | 34/148 [00:00<00:00, 1554.60it/s, Materializing param=transformer.h.2.mlp.c_fc.weight]Loading weights:  24%|██▎       | 35/148 [00:00<00:00, 1592.47it/s, Materializing param=transformer.h.2.mlp.c_proj.bias]Loading weights:  24%|██▎       | 35/148 [00:00<00:00, 1587.91it/s, Materializing param=transformer.h.2.mlp.c_proj.bias]Loading weights:  24%|██▍       | 36/148 [00:00<00:00, 1625.91it/s, Materializing param=transformer.h.2.mlp.c_proj.weight]Loading weights:  24%|██▍       | 36/148 [00:00<00:00, 1621.35it/s, Materializing param=transformer.h.2.mlp.c_proj.weight]Loading weights:  25%|██▌       | 37/148 [00:00<00:00, 1652.88it/s, Materializing param=transformer.h.3.attn.c_attn.bias] Loading weights:  25%|██▌       | 37/148 [00:00<00:00, 1647.64it/s, Materializing param=transformer.h.3.attn.c_attn.bias]Loading weights:  26%|██▌       | 38/148 [00:00<00:00, 1683.20it/s, Materializing param=transformer.h.3.attn.c_attn.weight]Loading weights:  26%|██▌       | 38/148 [00:00<00:00, 1677.16it/s, Materializing param=transformer.h.3.attn.c_attn.weight]Loading weights:  26%|██▋       | 39/148 [00:00<00:00, 1709.76it/s, Materializing param=transformer.h.3.attn.c_proj.bias]  Loading weights:  26%|██▋       | 39/148 [00:00<00:00, 1704.79it/s, Materializing param=transformer.h.3.attn.c_proj.bias]Loading weights:  27%|██▋       | 40/148 [00:00<00:00, 1736.97it/s, Materializing param=transformer.h.3.attn.c_proj.weight]Loading weights:  27%|██▋       | 40/148 [00:00<00:00, 1730.75it/s, Materializing param=transformer.h.3.attn.c_proj.weight]Loading weights:  28%|██▊       | 41/148 [00:00<00:00, 1762.38it/s, Materializing param=transformer.h.3.ln_1.bias]         Loading weights:  28%|██▊       | 41/148 [00:00<00:00, 1753.31it/s, Materializing param=transformer.h.3.ln_1.bias]Loading weights:  28%|██▊       | 42/148 [00:00<00:00, 1782.19it/s, Materializing param=transformer.h.3.ln_1.weight]Loading weights:  28%|██▊       | 42/148 [00:00<00:00, 1770.92it/s, Materializing param=transformer.h.3.ln_1.weight]Loading weights:  29%|██▉       | 43/148 [00:00<00:00, 1801.10it/s, Materializing param=transformer.h.3.ln_2.bias]  Loading weights:  29%|██▉       | 43/148 [00:00<00:00, 1787.76it/s, Materializing param=transformer.h.3.ln_2.bias]Loading weights:  30%|██▉       | 44/148 [00:00<00:00, 1809.73it/s, Materializing param=transformer.h.3.ln_2.weight]Loading weights:  30%|██▉       | 44/148 [00:00<00:00, 1804.43it/s, Materializing param=transformer.h.3.ln_2.weight]Loading weights:  30%|███       | 45/148 [00:00<00:00, 1837.64it/s, Materializing param=transformer.h.3.mlp.c_fc.bias]Loading weights:  30%|███       | 45/148 [00:00<00:00, 1832.87it/s, Materializing param=transformer.h.3.mlp.c_fc.bias]Loading weights:  31%|███       | 46/148 [00:00<00:00, 1855.76it/s, Materializing param=transformer.h.3.mlp.c_fc.weight]Loading weights:  31%|███       | 46/148 [00:00<00:00, 1849.61it/s, Materializing param=transformer.h.3.mlp.c_fc.weight]Loading weights:  32%|███▏      | 47/148 [00:00<00:00, 1869.74it/s, Materializing param=transformer.h.3.mlp.c_proj.bias]Loading weights:  32%|███▏      | 47/148 [00:00<00:00, 1859.90it/s, Materializing param=transformer.h.3.mlp.c_proj.bias]Loading weights:  32%|███▏      | 48/148 [00:00<00:00, 1890.32it/s, Materializing param=transformer.h.3.mlp.c_proj.weight]Loading weights:  32%|███▏      | 48/148 [00:00<00:00, 1885.57it/s, Materializing param=transformer.h.3.mlp.c_proj.weight]Loading weights:  33%|███▎      | 49/148 [00:00<00:00, 1898.09it/s, Materializing param=transformer.h.4.attn.c_attn.bias] Loading weights:  33%|███▎      | 49/148 [00:00<00:00, 1890.86it/s, Materializing param=transformer.h.4.attn.c_attn.bias]Loading weights:  34%|███▍      | 50/148 [00:00<00:00, 1919.80it/s, Materializing param=transformer.h.4.attn.c_attn.weight]Loading weights:  34%|███▍      | 50/148 [00:00<00:00, 1914.93it/s, Materializing param=transformer.h.4.attn.c_attn.weight]Loading weights:  34%|███▍      | 51/148 [00:00<00:00, 1945.29it/s, Materializing param=transformer.h.4.attn.c_proj.bias]  Loading weights:  34%|███▍      | 51/148 [00:00<00:00, 1910.95it/s, Materializing param=transformer.h.4.attn.c_proj.bias]Loading weights:  35%|███▌      | 52/148 [00:00<00:00, 1932.11it/s, Materializing param=transformer.h.4.attn.c_proj.weight]Loading weights:  35%|███▌      | 52/148 [00:00<00:00, 1926.88it/s, Materializing param=transformer.h.4.attn.c_proj.weight]Loading weights:  36%|███▌      | 53/148 [00:00<00:00, 1956.26it/s, Materializing param=transformer.h.4.ln_1.bias]         Loading weights:  36%|███▌      | 53/148 [00:00<00:00, 1951.71it/s, Materializing param=transformer.h.4.ln_1.bias]Loading weights:  36%|███▋      | 54/148 [00:00<00:00, 1980.97it/s, Materializing param=transformer.h.4.ln_1.weight]Loading weights:  36%|███▋      | 54/148 [00:00<00:00, 1976.44it/s, Materializing param=transformer.h.4.ln_1.weight]Loading weights:  37%|███▋      | 55/148 [00:00<00:00, 1936.28it/s, Materializing param=transformer.h.4.ln_2.bias]  Loading weights:  37%|███▋      | 55/148 [00:00<00:00, 1929.96it/s, Materializing param=transformer.h.4.ln_2.bias]Loading weights:  38%|███▊      | 56/148 [00:00<00:00, 1956.59it/s, Materializing param=transformer.h.4.ln_2.weight]Loading weights:  38%|███▊      | 56/148 [00:00<00:00, 1948.20it/s, Materializing param=transformer.h.4.ln_2.weight]Loading weights:  39%|███▊      | 57/148 [00:00<00:00, 1974.30it/s, Materializing param=transformer.h.4.mlp.c_fc.bias]Loading weights:  39%|███▊      | 57/148 [00:00<00:00, 1960.74it/s, Materializing param=transformer.h.4.mlp.c_fc.bias]Loading weights:  39%|███▉      | 58/148 [00:00<00:00, 1975.10it/s, Materializing param=transformer.h.4.mlp.c_fc.weight]Loading weights:  39%|███▉      | 58/148 [00:00<00:00, 1969.41it/s, Materializing param=transformer.h.4.mlp.c_fc.weight]Loading weights:  40%|███▉      | 59/148 [00:00<00:00, 1962.97it/s, Materializing param=transformer.h.4.mlp.c_proj.bias]Loading weights:  40%|███▉      | 59/148 [00:00<00:00, 1956.30it/s, Materializing param=transformer.h.4.mlp.c_proj.bias]Loading weights:  41%|████      | 60/148 [00:00<00:00, 1977.57it/s, Materializing param=transformer.h.4.mlp.c_proj.weight]Loading weights:  41%|████      | 60/148 [00:00<00:00, 1972.66it/s, Materializing param=transformer.h.4.mlp.c_proj.weight]Loading weights:  41%|████      | 61/148 [00:00<00:00, 1997.44it/s, Materializing param=transformer.h.5.attn.c_attn.bias] Loading weights:  41%|████      | 61/148 [00:00<00:00, 1993.06it/s, Materializing param=transformer.h.5.attn.c_attn.bias]Loading weights:  42%|████▏     | 62/148 [00:00<00:00, 2018.53it/s, Materializing param=transformer.h.5.attn.c_attn.weight]Loading weights:  42%|████▏     | 62/148 [00:00<00:00, 2013.56it/s, Materializing param=transformer.h.5.attn.c_attn.weight]Loading weights:  43%|████▎     | 63/148 [00:00<00:00, 2036.67it/s, Materializing param=transformer.h.5.attn.c_proj.bias]  Loading weights:  43%|████▎     | 63/148 [00:00<00:00, 2032.09it/s, Materializing param=transformer.h.5.attn.c_proj.bias]Loading weights:  43%|████▎     | 64/148 [00:00<00:00, 2057.10it/s, Materializing param=transformer.h.5.attn.c_proj.weight]Loading weights:  43%|████▎     | 64/148 [00:00<00:00, 2049.97it/s, Materializing param=transformer.h.5.attn.c_proj.weight]Loading weights:  44%|████▍     | 65/148 [00:00<00:00, 2072.17it/s, Materializing param=transformer.h.5.ln_1.bias]         Loading weights:  44%|████▍     | 65/148 [00:00<00:00, 2064.33it/s, Materializing param=transformer.h.5.ln_1.bias]Loading weights:  45%|████▍     | 66/148 [00:00<00:00, 2015.96it/s, Materializing param=transformer.h.5.ln_1.weight]Loading weights:  45%|████▍     | 66/148 [00:00<00:00, 2009.98it/s, Materializing param=transformer.h.5.ln_1.weight]Loading weights:  45%|████▌     | 67/148 [00:00<00:00, 2031.98it/s, Materializing param=transformer.h.5.ln_2.bias]  Loading weights:  45%|████▌     | 67/148 [00:00<00:00, 2026.12it/s, Materializing param=transformer.h.5.ln_2.bias]Loading weights:  46%|████▌     | 68/148 [00:00<00:00, 2047.93it/s, Materializing param=transformer.h.5.ln_2.weight]Loading weights:  46%|████▌     | 68/148 [00:00<00:00, 2043.88it/s, Materializing param=transformer.h.5.ln_2.weight]Loading weights:  47%|████▋     | 69/148 [00:00<00:00, 2067.10it/s, Materializing param=transformer.h.5.mlp.c_fc.bias]Loading weights:  47%|████▋     | 69/148 [00:00<00:00, 2063.11it/s, Materializing param=transformer.h.5.mlp.c_fc.bias]Loading weights:  47%|████▋     | 70/148 [00:00<00:00, 2086.50it/s, Materializing param=transformer.h.5.mlp.c_fc.weight]Loading weights:  47%|████▋     | 70/148 [00:00<00:00, 2082.54it/s, Materializing param=transformer.h.5.mlp.c_fc.weight]Loading weights:  48%|████▊     | 71/148 [00:00<00:00, 2105.65it/s, Materializing param=transformer.h.5.mlp.c_proj.bias]Loading weights:  48%|████▊     | 71/148 [00:00<00:00, 2030.79it/s, Materializing param=transformer.h.5.mlp.c_proj.bias]Loading weights:  49%|████▊     | 72/148 [00:00<00:00, 2051.69it/s, Materializing param=transformer.h.5.mlp.c_proj.weight]Loading weights:  49%|████▊     | 72/148 [00:00<00:00, 2044.24it/s, Materializing param=transformer.h.5.mlp.c_proj.weight]Loading weights:  49%|████▉     | 73/148 [00:00<00:00, 2060.53it/s, Materializing param=transformer.h.6.attn.c_attn.bias] Loading weights:  49%|████▉     | 73/148 [00:00<00:00, 2056.28it/s, Materializing param=transformer.h.6.attn.c_attn.bias]Loading weights:  50%|█████     | 74/148 [00:00<00:00, 2076.93it/s, Materializing param=transformer.h.6.attn.c_attn.weight]Loading weights:  50%|█████     | 74/148 [00:00<00:00, 2071.65it/s, Materializing param=transformer.h.6.attn.c_attn.weight]Loading weights:  51%|█████     | 75/148 [00:00<00:00, 2091.87it/s, Materializing param=transformer.h.6.attn.c_proj.bias]  Loading weights:  51%|█████     | 75/148 [00:00<00:00, 2086.80it/s, Materializing param=transformer.h.6.attn.c_proj.bias]Loading weights:  51%|█████▏    | 76/148 [00:00<00:00, 2092.62it/s, Materializing param=transformer.h.6.attn.c_proj.weight]Loading weights:  51%|█████▏    | 76/148 [00:00<00:00, 2087.70it/s, Materializing param=transformer.h.6.attn.c_proj.weight]Loading weights:  52%|█████▏    | 77/148 [00:00<00:00, 2107.25it/s, Materializing param=transformer.h.6.ln_1.bias]         Loading weights:  52%|█████▏    | 77/148 [00:00<00:00, 2102.96it/s, Materializing param=transformer.h.6.ln_1.bias]Loading weights:  53%|█████▎    | 78/148 [00:00<00:00, 2090.22it/s, Materializing param=transformer.h.6.ln_1.weight]Loading weights:  53%|█████▎    | 78/148 [00:00<00:00, 2084.39it/s, Materializing param=transformer.h.6.ln_1.weight]Loading weights:  53%|█████▎    | 79/148 [00:00<00:00, 2104.32it/s, Materializing param=transformer.h.6.ln_2.bias]  Loading weights:  53%|█████▎    | 79/148 [00:00<00:00, 2100.56it/s, Materializing param=transformer.h.6.ln_2.bias]Loading weights:  54%|█████▍    | 80/148 [00:00<00:00, 2120.76it/s, Materializing param=transformer.h.6.ln_2.weight]Loading weights:  54%|█████▍    | 80/148 [00:00<00:00, 2093.92it/s, Materializing param=transformer.h.6.ln_2.weight]Loading weights:  55%|█████▍    | 81/148 [00:00<00:00, 2113.33it/s, Materializing param=transformer.h.6.mlp.c_fc.bias]Loading weights:  55%|█████▍    | 81/148 [00:00<00:00, 2109.72it/s, Materializing param=transformer.h.6.mlp.c_fc.bias]Loading weights:  55%|█████▌    | 82/148 [00:00<00:00, 2128.32it/s, Materializing param=transformer.h.6.mlp.c_fc.weight]Loading weights:  55%|█████▌    | 82/148 [00:00<00:00, 2122.26it/s, Materializing param=transformer.h.6.mlp.c_fc.weight]Loading weights:  56%|█████▌    | 83/148 [00:00<00:00, 2140.92it/s, Materializing param=transformer.h.6.mlp.c_proj.bias]Loading weights:  56%|█████▌    | 83/148 [00:00<00:00, 2135.53it/s, Materializing param=transformer.h.6.mlp.c_proj.bias]Loading weights:  57%|█████▋    | 84/148 [00:00<00:00, 2154.33it/s, Materializing param=transformer.h.6.mlp.c_proj.weight]Loading weights:  57%|█████▋    | 84/148 [00:00<00:00, 2150.77it/s, Materializing param=transformer.h.6.mlp.c_proj.weight]Loading weights:  57%|█████▋    | 85/148 [00:00<00:00, 2170.22it/s, Materializing param=transformer.h.7.attn.c_attn.bias] Loading weights:  57%|█████▋    | 85/148 [00:00<00:00, 2166.72it/s, Materializing param=transformer.h.7.attn.c_attn.bias]Loading weights:  58%|█████▊    | 86/148 [00:00<00:00, 2185.43it/s, Materializing param=transformer.h.7.attn.c_attn.weight]Loading weights:  58%|█████▊    | 86/148 [00:00<00:00, 2181.90it/s, Materializing param=transformer.h.7.attn.c_attn.weight]Loading weights:  59%|█████▉    | 87/148 [00:00<00:00, 2200.90it/s, Materializing param=transformer.h.7.attn.c_proj.bias]  Loading weights:  59%|█████▉    | 87/148 [00:00<00:00, 2197.43it/s, Materializing param=transformer.h.7.attn.c_proj.bias]Loading weights:  59%|█████▉    | 88/148 [00:00<00:00, 2216.40it/s, Materializing param=transformer.h.7.attn.c_proj.weight]Loading weights:  59%|█████▉    | 88/148 [00:00<00:00, 2212.32it/s, Materializing param=transformer.h.7.attn.c_proj.weight]Loading weights:  60%|██████    | 89/148 [00:00<00:00, 2230.93it/s, Materializing param=transformer.h.7.ln_1.bias]         Loading weights:  60%|██████    | 89/148 [00:00<00:00, 2227.31it/s, Materializing param=transformer.h.7.ln_1.bias]Loading weights:  61%|██████    | 90/148 [00:00<00:00, 2246.28it/s, Materializing param=transformer.h.7.ln_1.weight]Loading weights:  61%|██████    | 90/148 [00:00<00:00, 2242.77it/s, Materializing param=transformer.h.7.ln_1.weight]Loading weights:  61%|██████▏   | 91/148 [00:00<00:00, 2261.84it/s, Materializing param=transformer.h.7.ln_2.bias]  Loading weights:  61%|██████▏   | 91/148 [00:00<00:00, 2258.30it/s, Materializing param=transformer.h.7.ln_2.bias]Loading weights:  62%|██████▏   | 92/148 [00:00<00:00, 2276.58it/s, Materializing param=transformer.h.7.ln_2.weight]Loading weights:  62%|██████▏   | 92/148 [00:00<00:00, 2273.11it/s, Materializing param=transformer.h.7.ln_2.weight]Loading weights:  63%|██████▎   | 93/148 [00:00<00:00, 2292.14it/s, Materializing param=transformer.h.7.mlp.c_fc.bias]Loading weights:  63%|██████▎   | 93/148 [00:00<00:00, 2288.58it/s, Materializing param=transformer.h.7.mlp.c_fc.bias]Loading weights:  64%|██████▎   | 94/148 [00:00<00:00, 2304.99it/s, Materializing param=transformer.h.7.mlp.c_fc.weight]Loading weights:  64%|██████▎   | 94/148 [00:00<00:00, 2301.11it/s, Materializing param=transformer.h.7.mlp.c_fc.weight]Loading weights:  64%|██████▍   | 95/148 [00:00<00:00, 2319.30it/s, Materializing param=transformer.h.7.mlp.c_proj.bias]Loading weights:  64%|██████▍   | 95/148 [00:00<00:00, 2315.72it/s, Materializing param=transformer.h.7.mlp.c_proj.bias]Loading weights:  65%|██████▍   | 96/148 [00:00<00:00, 2333.80it/s, Materializing param=transformer.h.7.mlp.c_proj.weight]Loading weights:  65%|██████▍   | 96/148 [00:00<00:00, 2330.26it/s, Materializing param=transformer.h.7.mlp.c_proj.weight]Loading weights:  66%|██████▌   | 97/148 [00:00<00:00, 2348.29it/s, Materializing param=transformer.h.8.attn.c_attn.bias] Loading weights:  66%|██████▌   | 97/148 [00:00<00:00, 2343.16it/s, Materializing param=transformer.h.8.attn.c_attn.bias]Loading weights:  66%|██████▌   | 98/148 [00:00<00:00, 2360.59it/s, Materializing param=transformer.h.8.attn.c_attn.weight]Loading weights:  66%|██████▌   | 98/148 [00:00<00:00, 2356.95it/s, Materializing param=transformer.h.8.attn.c_attn.weight]Loading weights:  67%|██████▋   | 99/148 [00:00<00:00, 2374.95it/s, Materializing param=transformer.h.8.attn.c_proj.bias]  Loading weights:  67%|██████▋   | 99/148 [00:00<00:00, 2371.37it/s, Materializing param=transformer.h.8.attn.c_proj.bias]Loading weights:  68%|██████▊   | 100/148 [00:00<00:00, 2388.53it/s, Materializing param=transformer.h.8.attn.c_proj.weight]Loading weights:  68%|██████▊   | 100/148 [00:00<00:00, 2384.83it/s, Materializing param=transformer.h.8.attn.c_proj.weight]Loading weights:  68%|██████▊   | 101/148 [00:00<00:00, 2402.63it/s, Materializing param=transformer.h.8.ln_1.bias]         Loading weights:  68%|██████▊   | 101/148 [00:00<00:00, 2399.03it/s, Materializing param=transformer.h.8.ln_1.bias]Loading weights:  69%|██████▉   | 102/148 [00:00<00:00, 2416.70it/s, Materializing param=transformer.h.8.ln_1.weight]Loading weights:  69%|██████▉   | 102/148 [00:00<00:00, 2413.18it/s, Materializing param=transformer.h.8.ln_1.weight]Loading weights:  70%|██████▉   | 103/148 [00:00<00:00, 2431.12it/s, Materializing param=transformer.h.8.ln_2.bias]  Loading weights:  70%|██████▉   | 103/148 [00:00<00:00, 2427.61it/s, Materializing param=transformer.h.8.ln_2.bias]Loading weights:  70%|███████   | 104/148 [00:00<00:00, 2445.36it/s, Materializing param=transformer.h.8.ln_2.weight]Loading weights:  70%|███████   | 104/148 [00:00<00:00, 2441.85it/s, Materializing param=transformer.h.8.ln_2.weight]Loading weights:  71%|███████   | 105/148 [00:00<00:00, 2459.70it/s, Materializing param=transformer.h.8.mlp.c_fc.bias]Loading weights:  71%|███████   | 105/148 [00:00<00:00, 2456.22it/s, Materializing param=transformer.h.8.mlp.c_fc.bias]Loading weights:  72%|███████▏  | 106/148 [00:00<00:00, 2472.93it/s, Materializing param=transformer.h.8.mlp.c_fc.weight]Loading weights:  72%|███████▏  | 106/148 [00:00<00:00, 2469.40it/s, Materializing param=transformer.h.8.mlp.c_fc.weight]Loading weights:  72%|███████▏  | 107/148 [00:00<00:00, 2486.58it/s, Materializing param=transformer.h.8.mlp.c_proj.bias]Loading weights:  72%|███████▏  | 107/148 [00:00<00:00, 2482.95it/s, Materializing param=transformer.h.8.mlp.c_proj.bias]Loading weights:  73%|███████▎  | 108/148 [00:00<00:00, 2499.99it/s, Materializing param=transformer.h.8.mlp.c_proj.weight]Loading weights:  73%|███████▎  | 108/148 [00:00<00:00, 2496.43it/s, Materializing param=transformer.h.8.mlp.c_proj.weight]Loading weights:  74%|███████▎  | 109/148 [00:00<00:00, 2512.93it/s, Materializing param=transformer.h.9.attn.c_attn.bias] Loading weights:  74%|███████▎  | 109/148 [00:00<00:00, 2509.26it/s, Materializing param=transformer.h.9.attn.c_attn.bias]Loading weights:  74%|███████▍  | 110/148 [00:00<00:00, 2525.65it/s, Materializing param=transformer.h.9.attn.c_attn.weight]Loading weights:  74%|███████▍  | 110/148 [00:00<00:00, 2522.08it/s, Materializing param=transformer.h.9.attn.c_attn.weight]Loading weights:  75%|███████▌  | 111/148 [00:00<00:00, 2538.81it/s, Materializing param=transformer.h.9.attn.c_proj.bias]  Loading weights:  75%|███████▌  | 111/148 [00:00<00:00, 2533.91it/s, Materializing param=transformer.h.9.attn.c_proj.bias]Loading weights:  76%|███████▌  | 112/148 [00:00<00:00, 2550.23it/s, Materializing param=transformer.h.9.attn.c_proj.weight]Loading weights:  76%|███████▌  | 112/148 [00:00<00:00, 2546.55it/s, Materializing param=transformer.h.9.attn.c_proj.weight]Loading weights:  76%|███████▋  | 113/148 [00:00<00:00, 2563.20it/s, Materializing param=transformer.h.9.ln_1.bias]         Loading weights:  76%|███████▋  | 113/148 [00:00<00:00, 2559.57it/s, Materializing param=transformer.h.9.ln_1.bias]Loading weights:  77%|███████▋  | 114/148 [00:00<00:00, 2575.90it/s, Materializing param=transformer.h.9.ln_1.weight]Loading weights:  77%|███████▋  | 114/148 [00:00<00:00, 2572.25it/s, Materializing param=transformer.h.9.ln_1.weight]Loading weights:  78%|███████▊  | 115/148 [00:00<00:00, 2588.80it/s, Materializing param=transformer.h.9.ln_2.bias]  Loading weights:  78%|███████▊  | 115/148 [00:00<00:00, 2585.19it/s, Materializing param=transformer.h.9.ln_2.bias]Loading weights:  78%|███████▊  | 116/148 [00:00<00:00, 2601.66it/s, Materializing param=transformer.h.9.ln_2.weight]Loading weights:  78%|███████▊  | 116/148 [00:00<00:00, 2598.06it/s, Materializing param=transformer.h.9.ln_2.weight]Loading weights:  79%|███████▉  | 117/148 [00:00<00:00, 2614.72it/s, Materializing param=transformer.h.9.mlp.c_fc.bias]Loading weights:  79%|███████▉  | 117/148 [00:00<00:00, 2610.47it/s, Materializing param=transformer.h.9.mlp.c_fc.bias]Loading weights:  80%|███████▉  | 118/148 [00:00<00:00, 2626.18it/s, Materializing param=transformer.h.9.mlp.c_fc.weight]Loading weights:  80%|███████▉  | 118/148 [00:00<00:00, 2622.45it/s, Materializing param=transformer.h.9.mlp.c_fc.weight]Loading weights:  80%|████████  | 119/148 [00:00<00:00, 2638.44it/s, Materializing param=transformer.h.9.mlp.c_proj.bias]Loading weights:  80%|████████  | 119/148 [00:00<00:00, 2634.77it/s, Materializing param=transformer.h.9.mlp.c_proj.bias]Loading weights:  81%|████████  | 120/148 [00:00<00:00, 2650.32it/s, Materializing param=transformer.h.9.mlp.c_proj.weight]Loading weights:  81%|████████  | 120/148 [00:00<00:00, 2646.60it/s, Materializing param=transformer.h.9.mlp.c_proj.weight]Loading weights:  82%|████████▏ | 121/148 [00:00<00:00, 2661.95it/s, Materializing param=transformer.h.10.attn.c_attn.bias]Loading weights:  82%|████████▏ | 121/148 [00:00<00:00, 2658.29it/s, Materializing param=transformer.h.10.attn.c_attn.bias]Loading weights:  82%|████████▏ | 122/148 [00:00<00:00, 2673.25it/s, Materializing param=transformer.h.10.attn.c_attn.weight]Loading weights:  82%|████████▏ | 122/148 [00:00<00:00, 2669.48it/s, Materializing param=transformer.h.10.attn.c_attn.weight]Loading weights:  83%|████████▎ | 123/148 [00:00<00:00, 2684.36it/s, Materializing param=transformer.h.10.attn.c_proj.bias]  Loading weights:  83%|████████▎ | 123/148 [00:00<00:00, 2680.60it/s, Materializing param=transformer.h.10.attn.c_proj.bias]Loading weights:  84%|████████▍ | 124/148 [00:00<00:00, 2695.47it/s, Materializing param=transformer.h.10.attn.c_proj.weight]Loading weights:  84%|████████▍ | 124/148 [00:00<00:00, 2691.56it/s, Materializing param=transformer.h.10.attn.c_proj.weight]Loading weights:  84%|████████▍ | 125/148 [00:00<00:00, 2707.09it/s, Materializing param=transformer.h.10.ln_1.bias]         Loading weights:  84%|████████▍ | 125/148 [00:00<00:00, 2703.42it/s, Materializing param=transformer.h.10.ln_1.bias]Loading weights:  85%|████████▌ | 126/148 [00:00<00:00, 2718.89it/s, Materializing param=transformer.h.10.ln_1.weight]Loading weights:  85%|████████▌ | 126/148 [00:00<00:00, 2715.12it/s, Materializing param=transformer.h.10.ln_1.weight]Loading weights:  86%|████████▌ | 127/148 [00:00<00:00, 2730.61it/s, Materializing param=transformer.h.10.ln_2.bias]  Loading weights:  86%|████████▌ | 127/148 [00:00<00:00, 2727.00it/s, Materializing param=transformer.h.10.ln_2.bias]Loading weights:  86%|████████▋ | 128/148 [00:00<00:00, 2742.62it/s, Materializing param=transformer.h.10.ln_2.weight]Loading weights:  86%|████████▋ | 128/148 [00:00<00:00, 2738.94it/s, Materializing param=transformer.h.10.ln_2.weight]Loading weights:  87%|████████▋ | 129/148 [00:00<00:00, 2750.91it/s, Materializing param=transformer.h.10.mlp.c_fc.bias]Loading weights:  87%|████████▋ | 129/148 [00:00<00:00, 2745.55it/s, Materializing param=transformer.h.10.mlp.c_fc.bias]Loading weights:  88%|████████▊ | 130/148 [00:00<00:00, 2760.47it/s, Materializing param=transformer.h.10.mlp.c_fc.weight]Loading weights:  88%|████████▊ | 130/148 [00:00<00:00, 2756.83it/s, Materializing param=transformer.h.10.mlp.c_fc.weight]Loading weights:  89%|████████▊ | 131/148 [00:00<00:00, 2772.16it/s, Materializing param=transformer.h.10.mlp.c_proj.bias]Loading weights:  89%|████████▊ | 131/148 [00:00<00:00, 2768.53it/s, Materializing param=transformer.h.10.mlp.c_proj.bias]Loading weights:  89%|████████▉ | 132/148 [00:00<00:00, 2783.89it/s, Materializing param=transformer.h.10.mlp.c_proj.weight]Loading weights:  89%|████████▉ | 132/148 [00:00<00:00, 2780.29it/s, Materializing param=transformer.h.10.mlp.c_proj.weight]Loading weights:  90%|████████▉ | 133/148 [00:00<00:00, 2795.63it/s, Materializing param=transformer.h.11.attn.c_attn.bias] Loading weights:  90%|████████▉ | 133/148 [00:00<00:00, 2791.98it/s, Materializing param=transformer.h.11.attn.c_attn.bias]Loading weights:  91%|█████████ | 134/148 [00:00<00:00, 2807.10it/s, Materializing param=transformer.h.11.attn.c_attn.weight]Loading weights:  91%|█████████ | 134/148 [00:00<00:00, 2802.80it/s, Materializing param=transformer.h.11.attn.c_attn.weight]Loading weights:  91%|█████████ | 135/148 [00:00<00:00, 2817.70it/s, Materializing param=transformer.h.11.attn.c_proj.bias]  Loading weights:  91%|█████████ | 135/148 [00:00<00:00, 2814.07it/s, Materializing param=transformer.h.11.attn.c_proj.bias]Loading weights:  92%|█████████▏| 136/148 [00:00<00:00, 2829.10it/s, Materializing param=transformer.h.11.attn.c_proj.weight]Loading weights:  92%|█████████▏| 136/148 [00:00<00:00, 2825.45it/s, Materializing param=transformer.h.11.attn.c_proj.weight]Loading weights:  93%|█████████▎| 137/148 [00:00<00:00, 2840.49it/s, Materializing param=transformer.h.11.ln_1.bias]         Loading weights:  93%|█████████▎| 137/148 [00:00<00:00, 2836.91it/s, Materializing param=transformer.h.11.ln_1.bias]Loading weights:  93%|█████████▎| 138/148 [00:00<00:00, 2851.82it/s, Materializing param=transformer.h.11.ln_1.weight]Loading weights:  93%|█████████▎| 138/148 [00:00<00:00, 2847.91it/s, Materializing param=transformer.h.11.ln_1.weight]Loading weights:  94%|█████████▍| 139/148 [00:00<00:00, 2862.78it/s, Materializing param=transformer.h.11.ln_2.bias]  Loading weights:  94%|█████████▍| 139/148 [00:00<00:00, 2859.23it/s, Materializing param=transformer.h.11.ln_2.bias]Loading weights:  95%|█████████▍| 140/148 [00:00<00:00, 2874.27it/s, Materializing param=transformer.h.11.ln_2.weight]Loading weights:  95%|█████████▍| 140/148 [00:00<00:00, 2870.33it/s, Materializing param=transformer.h.11.ln_2.weight]Loading weights:  95%|█████████▌| 141/148 [00:00<00:00, 2885.20it/s, Materializing param=transformer.h.11.mlp.c_fc.bias]Loading weights:  95%|█████████▌| 141/148 [00:00<00:00, 2881.67it/s, Materializing param=transformer.h.11.mlp.c_fc.bias]Loading weights:  96%|█████████▌| 142/148 [00:00<00:00, 2896.51it/s, Materializing param=transformer.h.11.mlp.c_fc.weight]Loading weights:  96%|█████████▌| 142/148 [00:00<00:00, 2892.95it/s, Materializing param=transformer.h.11.mlp.c_fc.weight]Loading weights:  97%|█████████▋| 143/148 [00:00<00:00, 2907.70it/s, Materializing param=transformer.h.11.mlp.c_proj.bias]Loading weights:  97%|█████████▋| 143/148 [00:00<00:00, 2904.09it/s, Materializing param=transformer.h.11.mlp.c_proj.bias]Loading weights:  97%|█████████▋| 144/148 [00:00<00:00, 2918.71it/s, Materializing param=transformer.h.11.mlp.c_proj.weight]Loading weights:  97%|█████████▋| 144/148 [00:00<00:00, 2915.13it/s, Materializing param=transformer.h.11.mlp.c_proj.weight]Loading weights:  98%|█████████▊| 145/148 [00:00<00:00, 2929.73it/s, Materializing param=transformer.ln_f.bias]             Loading weights:  98%|█████████▊| 145/148 [00:00<00:00, 2926.21it/s, Materializing param=transformer.ln_f.bias]Loading weights:  99%|█████████▊| 146/148 [00:00<00:00, 2940.93it/s, Materializing param=transformer.ln_f.weight]Loading weights:  99%|█████████▊| 146/148 [00:00<00:00, 2937.44it/s, Materializing param=transformer.ln_f.weight]Loading weights:  99%|█████████▉| 147/148 [00:00<00:00, 2951.02it/s, Materializing param=transformer.wpe.weight] Loading weights:  99%|█████████▉| 147/148 [00:00<00:00, 2947.27it/s, Materializing param=transformer.wpe.weight]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2961.54it/s, Materializing param=transformer.wte.weight]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2958.00it/s, Materializing param=transformer.wte.weight]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2949.45it/s, Materializing param=transformer.wte.weight]
+[WARNING|loading_report.py:239] 2026-01-14 14:51:45,117 >> GPT2LMHeadModel LOAD REPORT from: openai-community/gpt2
+Key                  | Status     |  | 
+---------------------+------------+--+-
+h.{0...11}.attn.bias | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[INFO|configuration_utils.py:967] 2026-01-14 14:51:45,135 >> loading configuration file generation_config.json from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/generation_config.json
+[INFO|configuration_utils.py:1014] 2026-01-14 14:51:45,135 >> Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+Running tokenizer on dataset (num_proc=1):   0%|          | 0/4669 [00:00<?, ? examples/s]Spawning 1 processes
+01/14/2026 14:51:45 - INFO - datasets.arrow_dataset - Spawning 1 processes
+Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-794e0801bf602b7d.arrow
+01/14/2026 14:51:46 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-794e0801bf602b7d.arrow
+Running tokenizer on dataset (num_proc=1):  21%|██▏       | 1000/4669 [00:01<00:04, 735.49 examples/s]Running tokenizer on dataset (num_proc=1):  43%|████▎     | 2000/4669 [00:02<00:02, 953.21 examples/s]Running tokenizer on dataset (num_proc=1):  64%|██████▍   | 3000/4669 [00:03<00:01, 1051.84 examples/s]Running tokenizer on dataset (num_proc=1):  86%|████████▌ | 4000/4669 [00:03<00:00, 1111.33 examples/s]Running tokenizer on dataset (num_proc=1): 100%|██████████| 4669/4669 [00:04<00:00, 1123.47 examples/s]Running tokenizer on dataset (num_proc=1): 100%|██████████| 4669/4669 [00:04<00:00, 1025.15 examples/s]
+Map (num_proc=1):   0%|          | 0/4669 [00:00<?, ? examples/s]Spawning 1 processes
+01/14/2026 14:51:50 - INFO - datasets.arrow_dataset - Spawning 1 processes
+Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-f88cd177f305da38.arrow
+01/14/2026 14:51:50 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-f88cd177f305da38.arrow
+Map (num_proc=1):  21%|██▏       | 1000/4669 [00:00<00:00, 3682.08 examples/s]Map (num_proc=1):  43%|████▎     | 2000/4669 [00:00<00:00, 4104.31 examples/s]Map (num_proc=1):  64%|██████▍   | 3000/4669 [00:00<00:00, 4343.51 examples/s]Map (num_proc=1):  86%|████████▌ | 4000/4669 [00:00<00:00, 4460.34 examples/s]Map (num_proc=1): 100%|██████████| 4669/4669 [00:01<00:00, 4527.76 examples/s]Map (num_proc=1): 100%|██████████| 4669/4669 [00:01<00:00, 3893.82 examples/s]
+[17806, 6906, 319, 281, 1981, 2137, 705, 82, 3164, 1058, 618, 530, 3038, 318, 6163, 837, 262, 584, 318, 15283, 572, 284, 262, 2137, 764, 22151, 10566, 837, 262, 2137, 3435, 1334, 287, 257, 1413, 837, 810, 4991, 460, 307, 27658, 290, 2095, 3349, 8833, 764, 17159, 1589, 262, 1388, 1621, 10566, 389, 2095, 2488, 12, 31, 2176, 850, 10566, 11270, 284, 1180, 8244, 1866, 764, 2293, 262, 983, 705, 82, 11939, 837, 3224, 8640, 389, 14838, 837, 617, 286, 606, 1719, 257, 2440, 8722, 621, 883, 1043, 287, 262, 1334, 286, 262, 983, 764, 1318, 389, 635, 1842, 18640, 4847, 3519, 284, 262, 983, 705, 82, 734, 1388, 4293, 1127, 837, 3584, 484, 1011, 257, 845, 4159, 2597, 764, 220, 198, 383, 983, 705, 82, 3344, 1080, 837, 262, 1086, 72, 51, 57, 1080, 837, 318, 5281, 625, 3264, 422, 569, 18354, 8704, 17740, 764, 5856, 10566, 837, 1938, 2922, 1123, 4326, 1262, 257, 1353, 2488, 12, 31, 866, 6650, 286, 262, 13480, 3975, 1058, 1752, 257, 2095, 318, 6163, 837, 262, 2137, 6100, 262, 2095, 1088, 262, 13480, 287, 2368, 2488, 12, 31, 1048, 764, 317, 2095, 460, 691, 719, 1752, 583, 2488, 12, 31, 1210, 837, 475, 3435, 460, 307, 7520, 3294, 4962, 379, 262, 10907, 286, 584, 3435, 705, 4962, 764, 5501, 2095, 468, 257, 2214, 290, 5253, 286, 3356, 3614, 416, 511, 7561, 35094, 469, 764, 3205, 284, 5193, 3435, 460, 307, 8686, 284, 257, 2060, 4365, 764, 5856, 11327, 837, 3435, 481, 869, 503, 611, 1223, 4325, 284, 606, 837, 884, 355, 511, 1535, 2173, 357, 6574, 1267, 1972, 1877, 393, 852, 13642, 503, 416, 4472, 3434, 764, 5501, 2095, 468, 2176, 366, 6902, 14817, 366, 837, 4678, 3748, 284, 1123, 2095, 764, 1119, 389, 9086, 656, 366, 15644, 32480, 366, 837, 543, 389, 28690, 4678, 326, 3520, 555, 282, 4400, 4556, 4306, 34756, 416, 262, 1621, 290, 460, 2035, 1037, 393, 43195, 257, 2095, 837, 290, 366, 5838, 6902, 14817, 366, 837, 543, 389, 7334, 3690, 262, 983, 290, 1464, 7264, 1489, 684, 284, 257, 2095, 764, 1675, 2193, 5838, 6902, 14817, 837, 1123, 2095, 468, 257, 3748, 366, 15812, 8655, 366, 837, 257, 10706, 2488, 12, 31, 1912, 5032, 3084, 326, 460, 307, 973, 284, 12831, 290, 2792, 1180, 4678, 764, 26813, 635, 423, 6093, 31447, 326, 7264, 606, 8584, 31822, 319, 262, 13480, 1058, 20642, 460, 15155, 366, 4128, 9455, 366, 290, 1445, 1088, 262, 13480, 1231, 390, 47130, 465, 7561, 6252, 18266, 837, 262, 2095, 797, 10102, 460, 6482, 656, 607, 366, 569, 18354, 7496, 5178, 366, 290, 1716, 46038, 837, 981, 1846, 6888, 460, 2496, 3294, 4472, 4991, 351, 607, 4334, 4282, 764, 220, 198, 8498, 2840, 389, 9086, 656, 1936, 6097, 1058, 30456, 837, 22763, 23528, 20618, 837, 27170, 837, 406, 20811, 290, 29347, 20104, 764, 8498, 20618, 460, 5078, 6097, 416, 5609, 511, 8686, 4282, 764, 33680, 1398, 857, 407, 9257, 2689, 262, 9756, 8618, 981, 287, 257, 2180, 1398, 764, 2080, 5373, 287, 3344, 837, 1998, 2173, 389, 11343, 284, 262, 8244, 837, 543, 389, 9387, 656, 50256]
+4669
+Running tokenizer on dataset (num_proc=1):   0%|          | 0/553 [00:00<?, ? examples/s]Spawning 1 processes
+01/14/2026 14:51:51 - INFO - datasets.arrow_dataset - Spawning 1 processes
+Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-5dec57a6db5fd5f0.arrow
+01/14/2026 14:51:52 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-5dec57a6db5fd5f0.arrow
+Running tokenizer on dataset (num_proc=1): 100%|██████████| 553/553 [00:00<00:00, 576.80 examples/s]Running tokenizer on dataset (num_proc=1): 100%|██████████| 553/553 [00:01<00:00, 519.43 examples/s]
+Map (num_proc=1):   0%|          | 0/553 [00:00<?, ? examples/s]Spawning 1 processes
+01/14/2026 14:51:52 - INFO - datasets.arrow_dataset - Spawning 1 processes
+Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-6d0da30057ed1e7f.arrow
+01/14/2026 14:51:52 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2/cache-6d0da30057ed1e7f.arrow
+Map (num_proc=1): 100%|██████████| 553/553 [00:00<00:00, 3470.27 examples/s]Map (num_proc=1): 100%|██████████| 553/553 [00:00<00:00, 2072.48 examples/s]
+Downloading builder script: 0.00B [00:00, ?B/s]Downloading builder script: 4.20kB [00:00, 14.8MB/s]
+01/14/2026 14:53:13 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[WARNING|trainer.py:922] 2026-01-14 14:53:13,584 >> The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'pad_token_id': 50256}.
+[INFO|trainer.py:952] 2026-01-14 14:53:13,775 >> The following columns in the Training set don't have a corresponding argument in `GPT2LMHeadModel.forward` and have been ignored: cls_confidence, cls_score. If cls_confidence, cls_score are not expected by `GPT2LMHeadModel.forward`,  you can safely ignore this message.
+[INFO|trainer.py:2388] 2026-01-14 14:53:13,782 >> ***** Running training *****
+[INFO|trainer.py:2389] 2026-01-14 14:53:13,782 >>   Num examples = 4,669
+[INFO|trainer.py:2390] 2026-01-14 14:53:13,782 >>   Num Epochs = 1
+[INFO|trainer.py:2391] 2026-01-14 14:53:13,782 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:2394] 2026-01-14 14:53:13,782 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:2395] 2026-01-14 14:53:13,782 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:2396] 2026-01-14 14:53:13,782 >>   Total optimization steps = 584
+[INFO|trainer.py:2397] 2026-01-14 14:53:13,782 >>   Number of trainable parameters = 124,439,808
+  0%|          | 0/584 [00:00<?, ?it/s]  0%|          | 1/584 [00:01<16:35,  1.71s/it]  1%|          | 3/584 [00:01<04:49,  2.01it/s]  1%|          | 5/584 [00:01<02:41,  3.59it/s]  1%|          | 7/584 [00:02<01:48,  5.33it/s]  2%|▏         | 9/584 [00:02<01:20,  7.12it/s]  2%|▏         | 11/584 [00:02<01:04,  8.82it/s]  2%|▏         | 13/584 [00:02<00:55, 10.38it/s]  3%|▎         | 15/584 [00:02<00:48, 11.76it/s]  3%|▎         | 17/584 [00:02<00:43, 12.90it/s]  3%|▎         | 19/584 [00:02<00:40, 13.82it/s]  4%|▎         | 21/584 [00:02<00:38, 14.55it/s]  4%|▍         | 23/584 [00:03<00:37, 15.04it/s]  4%|▍         | 25/584 [00:03<00:36, 15.44it/s]  5%|▍         | 27/584 [00:03<00:35, 15.77it/s]  5%|▍         | 29/584 [00:03<00:34, 15.99it/s]  5%|▌         | 31/584 [00:03<00:34, 16.13it/s]  6%|▌         | 33/584 [00:03<00:33, 16.28it/s]  6%|▌         | 35/584 [00:03<00:33, 16.37it/s]  6%|▋         | 37/584 [00:03<00:33, 16.36it/s]  7%|▋         | 39/584 [00:04<00:33, 16.44it/s]  7%|▋         | 41/584 [00:04<00:33, 16.43it/s]  7%|▋         | 43/584 [00:04<00:32, 16.49it/s]  8%|▊         | 45/584 [00:04<00:32, 16.55it/s]  8%|▊         | 47/584 [00:04<00:32, 16.55it/s]  8%|▊         | 49/584 [00:04<00:32, 16.55it/s]  9%|▊         | 51/584 [00:04<00:32, 16.60it/s]  9%|▉         | 53/584 [00:04<00:31, 16.63it/s]  9%|▉         | 55/584 [00:05<00:31, 16.63it/s] 10%|▉         | 57/584 [00:05<00:31, 16.63it/s] 10%|█         | 59/584 [00:05<00:31, 16.66it/s] 10%|█         | 61/584 [00:05<00:31, 16.64it/s] 11%|█         | 63/584 [00:05<00:31, 16.65it/s] 11%|█         | 65/584 [00:05<00:31, 16.65it/s] 11%|█▏        | 67/584 [00:05<00:31, 16.64it/s] 12%|█▏        | 69/584 [00:05<00:30, 16.69it/s] 12%|█▏        | 71/584 [00:06<00:30, 16.70it/s] 12%|█▎        | 73/584 [00:06<00:30, 16.68it/s] 13%|█▎        | 75/584 [00:06<00:30, 16.71it/s] 13%|█▎        | 77/584 [00:06<00:30, 16.70it/s] 14%|█▎        | 79/584 [00:06<00:30, 16.70it/s] 14%|█▍        | 81/584 [00:06<00:30, 16.69it/s] 14%|█▍        | 83/584 [00:06<00:29, 16.72it/s] 15%|█▍        | 85/584 [00:06<00:29, 16.71it/s] 15%|█▍        | 87/584 [00:06<00:29, 16.69it/s] 15%|█▌        | 89/584 [00:07<00:29, 16.72it/s] 16%|█▌        | 91/584 [00:07<00:29, 16.71it/s] 16%|█▌        | 93/584 [00:07<00:29, 16.73it/s] 16%|█▋        | 95/584 [00:07<00:29, 16.74it/s] 17%|█▋        | 97/584 [00:07<00:29, 16.71it/s] 17%|█▋        | 99/584 [00:07<00:29, 16.70it/s] 17%|█▋        | 101/584 [00:07<00:28, 16.70it/s] 18%|█▊        | 103/584 [00:07<00:28, 16.73it/s] 18%|█▊        | 105/584 [00:08<00:28, 16.67it/s] 18%|█▊        | 107/584 [00:08<00:28, 16.71it/s] 19%|█▊        | 109/584 [00:08<00:28, 16.73it/s] 19%|█▉        | 111/584 [00:08<00:28, 16.75it/s] 19%|█▉        | 113/584 [00:08<00:28, 16.76it/s] 20%|█▉        | 115/584 [00:08<00:27, 16.77it/s] 20%|██        | 117/584 [00:08<00:27, 16.78it/s] 20%|██        | 119/584 [00:08<00:27, 16.78it/s] 21%|██        | 121/584 [00:08<00:27, 16.78it/s] 21%|██        | 123/584 [00:09<00:27, 16.75it/s] 21%|██▏       | 125/584 [00:09<00:27, 16.76it/s] 22%|██▏       | 127/584 [00:09<00:27, 16.75it/s] 22%|██▏       | 129/584 [00:09<00:27, 16.76it/s] 22%|██▏       | 131/584 [00:09<00:27, 16.77it/s] 23%|██▎       | 133/584 [00:09<00:26, 16.75it/s] 23%|██▎       | 135/584 [00:09<00:26, 16.76it/s] 23%|██▎       | 137/584 [00:09<00:26, 16.75it/s] 24%|██▍       | 139/584 [00:10<00:26, 16.75it/s] 24%|██▍       | 141/584 [00:10<00:26, 16.74it/s] 24%|██▍       | 143/584 [00:10<00:26, 16.74it/s] 25%|██▍       | 145/584 [00:10<00:26, 16.75it/s] 25%|██▌       | 147/584 [00:10<00:26, 16.76it/s] 26%|██▌       | 149/584 [00:10<00:25, 16.75it/s] 26%|██▌       | 151/584 [00:10<00:25, 16.76it/s] 26%|██▌       | 153/584 [00:10<00:25, 16.76it/s] 27%|██▋       | 155/584 [00:11<00:25, 16.76it/s] 27%|██▋       | 157/584 [00:11<00:25, 16.76it/s] 27%|██▋       | 159/584 [00:11<00:25, 16.78it/s] 28%|██▊       | 161/584 [00:11<00:25, 16.78it/s] 28%|██▊       | 163/584 [00:11<00:25, 16.77it/s] 28%|██▊       | 165/584 [00:11<00:24, 16.77it/s] 29%|██▊       | 167/584 [00:11<00:24, 16.77it/s] 29%|██▉       | 169/584 [00:11<00:24, 16.78it/s] 29%|██▉       | 171/584 [00:11<00:24, 16.69it/s] 30%|██▉       | 173/584 [00:12<00:24, 16.68it/s] 30%|██▉       | 175/584 [00:12<00:24, 16.70it/s] 30%|███       | 177/584 [00:12<00:24, 16.72it/s] 31%|███       | 179/584 [00:12<00:24, 16.75it/s] 31%|███       | 181/584 [00:12<00:24, 16.76it/s] 31%|███▏      | 183/584 [00:12<00:23, 16.77it/s] 32%|███▏      | 185/584 [00:12<00:23, 16.77it/s] 32%|███▏      | 187/584 [00:12<00:23, 16.77it/s] 32%|███▏      | 189/584 [00:13<00:23, 16.78it/s] 33%|███▎      | 191/584 [00:13<00:23, 16.78it/s] 33%|███▎      | 193/584 [00:13<00:23, 16.78it/s] 33%|███▎      | 195/584 [00:13<00:23, 16.78it/s] 34%|███▎      | 197/584 [00:13<00:23, 16.78it/s] 34%|███▍      | 199/584 [00:13<00:22, 16.78it/s] 34%|███▍      | 201/584 [00:13<00:22, 16.78it/s] 35%|███▍      | 203/584 [00:13<00:22, 16.78it/s] 35%|███▌      | 205/584 [00:14<00:22, 16.77it/s] 35%|███▌      | 207/584 [00:14<00:22, 16.76it/s] 36%|███▌      | 209/584 [00:14<00:22, 16.76it/s] 36%|███▌      | 211/584 [00:14<00:22, 16.77it/s] 36%|███▋      | 213/584 [00:14<00:22, 16.78it/s] 37%|███▋      | 215/584 [00:14<00:21, 16.78it/s] 37%|███▋      | 217/584 [00:14<00:21, 16.79it/s] 38%|███▊      | 219/584 [00:14<00:21, 16.79it/s] 38%|███▊      | 221/584 [00:14<00:21, 16.79it/s] 38%|███▊      | 223/584 [00:15<00:21, 16.80it/s] 39%|███▊      | 225/584 [00:15<00:21, 16.79it/s] 39%|███▉      | 227/584 [00:15<00:21, 16.78it/s] 39%|███▉      | 229/584 [00:15<00:21, 16.78it/s] 40%|███▉      | 231/584 [00:15<00:21, 16.78it/s] 40%|███▉      | 233/584 [00:15<00:20, 16.79it/s] 40%|████      | 235/584 [00:15<00:20, 16.78it/s] 41%|████      | 237/584 [00:15<00:20, 16.78it/s] 41%|████      | 239/584 [00:16<00:20, 16.77it/s] 41%|████▏     | 241/584 [00:16<00:20, 16.77it/s] 42%|████▏     | 243/584 [00:16<00:20, 16.78it/s] 42%|████▏     | 245/584 [00:16<00:20, 16.78it/s] 42%|████▏     | 247/584 [00:16<00:20, 16.76it/s] 43%|████▎     | 249/584 [00:16<00:19, 16.77it/s] 43%|████▎     | 251/584 [00:16<00:19, 16.77it/s] 43%|████▎     | 253/584 [00:16<00:19, 16.77it/s] 44%|████▎     | 255/584 [00:16<00:19, 16.78it/s] 44%|████▍     | 257/584 [00:17<00:19, 16.78it/s] 44%|████▍     | 259/584 [00:17<00:19, 16.79it/s] 45%|████▍     | 261/584 [00:17<00:19, 16.79it/s] 45%|████▌     | 263/584 [00:17<00:19, 16.77it/s] 45%|████▌     | 265/584 [00:17<00:19, 16.79it/s] 46%|████▌     | 267/584 [00:17<00:18, 16.78it/s] 46%|████▌     | 269/584 [00:17<00:18, 16.79it/s] 46%|████▋     | 271/584 [00:17<00:18, 16.79it/s] 47%|████▋     | 273/584 [00:18<00:18, 16.79it/s] 47%|████▋     | 275/584 [00:18<00:18, 16.80it/s] 47%|████▋     | 277/584 [00:18<00:18, 16.80it/s] 48%|████▊     | 279/584 [00:18<00:18, 16.80it/s] 48%|████▊     | 281/584 [00:18<00:18, 16.80it/s] 48%|████▊     | 283/584 [00:18<00:17, 16.79it/s] 49%|████▉     | 285/584 [00:18<00:17, 16.76it/s] 49%|████▉     | 287/584 [00:18<00:17, 16.76it/s] 49%|████▉     | 289/584 [00:19<00:17, 16.77it/s] 50%|████▉     | 291/584 [00:19<00:17, 16.76it/s] 50%|█████     | 293/584 [00:19<00:17, 16.77it/s] 51%|█████     | 295/584 [00:19<00:17, 16.77it/s] 51%|█████     | 297/584 [00:19<00:17, 16.77it/s] 51%|█████     | 299/584 [00:19<00:16, 16.78it/s] 52%|█████▏    | 301/584 [00:19<00:16, 16.78it/s] 52%|█████▏    | 303/584 [00:19<00:16, 16.79it/s] 52%|█████▏    | 305/584 [00:19<00:16, 16.79it/s] 53%|█████▎    | 307/584 [00:20<00:16, 16.79it/s] 53%|█████▎    | 309/584 [00:20<00:16, 16.79it/s] 53%|█████▎    | 311/584 [00:20<00:16, 16.79it/s] 54%|█████▎    | 313/584 [00:20<00:16, 16.79it/s] 54%|█████▍    | 315/584 [00:20<00:16, 16.79it/s] 54%|█████▍    | 317/584 [00:20<00:15, 16.79it/s] 55%|█████▍    | 319/584 [00:20<00:15, 16.79it/s] 55%|█████▍    | 321/584 [00:20<00:15, 16.79it/s] 55%|█████▌    | 323/584 [00:21<00:15, 16.79it/s] 56%|█████▌    | 325/584 [00:21<00:15, 16.79it/s] 56%|█████▌    | 327/584 [00:21<00:15, 16.76it/s] 56%|█████▋    | 329/584 [00:21<00:15, 16.77it/s] 57%|█████▋    | 331/584 [00:21<00:15, 16.78it/s] 57%|█████▋    | 333/584 [00:21<00:14, 16.78it/s] 57%|█████▋    | 335/584 [00:21<00:14, 16.79it/s] 58%|█████▊    | 337/584 [00:21<00:14, 16.79it/s] 58%|█████▊    | 339/584 [00:21<00:14, 16.79it/s] 58%|█████▊    | 341/584 [00:22<00:14, 16.79it/s] 59%|█████▊    | 343/584 [00:22<00:14, 16.76it/s] 59%|█████▉    | 345/584 [00:22<00:14, 16.77it/s] 59%|█████▉    | 347/584 [00:22<00:14, 16.77it/s] 60%|█████▉    | 349/584 [00:22<00:14, 16.78it/s] 60%|██████    | 351/584 [00:22<00:13, 16.78it/s] 60%|██████    | 353/584 [00:22<00:13, 16.78it/s] 61%|██████    | 355/584 [00:22<00:13, 16.79it/s] 61%|██████    | 357/584 [00:23<00:13, 16.79it/s] 61%|██████▏   | 359/584 [00:23<00:13, 16.79it/s] 62%|██████▏   | 361/584 [00:23<00:13, 16.78it/s] 62%|██████▏   | 363/584 [00:23<00:13, 16.78it/s] 62%|██████▎   | 365/584 [00:23<00:13, 16.78it/s] 63%|██████▎   | 367/584 [00:23<00:12, 16.78it/s] 63%|██████▎   | 369/584 [00:23<00:12, 16.78it/s] 64%|██████▎   | 371/584 [00:23<00:12, 16.75it/s] 64%|██████▍   | 373/584 [00:24<00:12, 16.77it/s] 64%|██████▍   | 375/584 [00:24<00:12, 16.77it/s] 65%|██████▍   | 377/584 [00:24<00:12, 16.78it/s] 65%|██████▍   | 379/584 [00:24<00:12, 16.78it/s] 65%|██████▌   | 381/584 [00:24<00:12, 16.78it/s] 66%|██████▌   | 383/584 [00:24<00:11, 16.78it/s] 66%|██████▌   | 385/584 [00:24<00:11, 16.78it/s] 66%|██████▋   | 387/584 [00:24<00:11, 16.78it/s] 67%|██████▋   | 389/584 [00:24<00:11, 16.78it/s] 67%|██████▋   | 391/584 [00:25<00:11, 16.78it/s] 67%|██████▋   | 393/584 [00:25<00:11, 16.78it/s] 68%|██████▊   | 395/584 [00:25<00:11, 16.79it/s] 68%|██████▊   | 397/584 [00:25<00:11, 16.79it/s] 68%|██████▊   | 399/584 [00:25<00:11, 16.78it/s] 69%|██████▊   | 401/584 [00:25<00:10, 16.78it/s] 69%|██████▉   | 403/584 [00:25<00:10, 16.77it/s] 69%|██████▉   | 405/584 [00:25<00:10, 16.77it/s] 70%|██████▉   | 407/584 [00:26<00:10, 16.77it/s] 70%|███████   | 409/584 [00:26<00:10, 16.78it/s] 70%|███████   | 411/584 [00:26<00:10, 16.77it/s] 71%|███████   | 413/584 [00:26<00:10, 16.77it/s] 71%|███████   | 415/584 [00:26<00:10, 16.77it/s] 71%|███████▏  | 417/584 [00:26<00:09, 16.78it/s] 72%|███████▏  | 419/584 [00:26<00:09, 16.78it/s] 72%|███████▏  | 421/584 [00:26<00:09, 16.79it/s] 72%|███████▏  | 423/584 [00:26<00:09, 16.79it/s] 73%|███████▎  | 425/584 [00:27<00:09, 16.79it/s] 73%|███████▎  | 427/584 [00:27<00:09, 16.79it/s] 73%|███████▎  | 429/584 [00:27<00:09, 16.79it/s] 74%|███████▍  | 431/584 [00:27<00:09, 16.79it/s] 74%|███████▍  | 433/584 [00:27<00:08, 16.79it/s] 74%|███████▍  | 435/584 [00:27<00:08, 16.79it/s] 75%|███████▍  | 437/584 [00:27<00:08, 16.79it/s] 75%|███████▌  | 439/584 [00:27<00:08, 16.78it/s] 76%|███████▌  | 441/584 [00:28<00:08, 16.77it/s] 76%|███████▌  | 443/584 [00:28<00:08, 16.78it/s] 76%|███████▌  | 445/584 [00:28<00:08, 16.78it/s] 77%|███████▋  | 447/584 [00:28<00:08, 16.78it/s] 77%|███████▋  | 449/584 [00:28<00:08, 16.78it/s] 77%|███████▋  | 451/584 [00:28<00:07, 16.78it/s] 78%|███████▊  | 453/584 [00:28<00:07, 16.76it/s] 78%|███████▊  | 455/584 [00:28<00:07, 16.75it/s] 78%|███████▊  | 457/584 [00:29<00:07, 16.75it/s] 79%|███████▊  | 459/584 [00:29<00:07, 16.75it/s] 79%|███████▉  | 461/584 [00:29<00:07, 16.75it/s] 79%|███████▉  | 463/584 [00:29<00:07, 16.75it/s] 80%|███████▉  | 465/584 [00:29<00:07, 16.76it/s] 80%|███████▉  | 467/584 [00:29<00:06, 16.77it/s] 80%|████████  | 469/584 [00:29<00:06, 16.77it/s] 81%|████████  | 471/584 [00:29<00:06, 16.75it/s] 81%|████████  | 473/584 [00:29<00:06, 16.75it/s] 81%|████████▏ | 475/584 [00:30<00:06, 16.76it/s] 82%|████████▏ | 477/584 [00:30<00:06, 16.77it/s] 82%|████████▏ | 479/584 [00:30<00:06, 16.77it/s] 82%|████████▏ | 481/584 [00:30<00:06, 16.76it/s] 83%|████████▎ | 483/584 [00:30<00:06, 16.76it/s] 83%|████████▎ | 485/584 [00:30<00:05, 16.76it/s] 83%|████████▎ | 487/584 [00:30<00:05, 16.76it/s] 84%|████████▎ | 489/584 [00:30<00:05, 16.76it/s] 84%|████████▍ | 491/584 [00:31<00:05, 16.76it/s] 84%|████████▍ | 493/584 [00:31<00:05, 16.76it/s] 85%|████████▍ | 495/584 [00:31<00:05, 16.77it/s] 85%|████████▌ | 497/584 [00:31<00:05, 16.77it/s] 85%|████████▌ | 499/584 [00:31<00:05, 16.78it/s]                                                  86%|████████▌ | 500/584 [00:31<00:05, 16.78it/s] 86%|████████▌ | 501/584 [00:31<00:05, 14.17it/s] 86%|████████▌ | 503/584 [00:31<00:05, 14.86it/s] 86%|████████▋ | 505/584 [00:31<00:05, 15.39it/s] 87%|████████▋ | 507/584 [00:32<00:04, 15.78it/s] 87%|████████▋ | 509/584 [00:32<00:04, 16.07it/s] 88%|████████▊ | 511/584 [00:32<00:04, 16.27it/s] 88%|████████▊ | 513/584 [00:32<00:04, 16.42it/s] 88%|████████▊ | 515/584 [00:32<00:04, 16.53it/s] 89%|████████▊ | 517/584 [00:32<00:04, 16.61it/s] 89%|████████▉ | 519/584 [00:32<00:03, 16.66it/s] 89%|████████▉ | 521/584 [00:32<00:03, 16.70it/s] 90%|████████▉ | 523/584 [00:33<00:03, 16.72it/s] 90%|████████▉ | 525/584 [00:33<00:03, 16.74it/s] 90%|█████████ | 527/584 [00:33<00:03, 16.75it/s] 91%|█████████ | 529/584 [00:33<00:03, 16.76it/s] 91%|█████████ | 531/584 [00:33<00:03, 16.77it/s] 91%|█████████▏| 533/584 [00:33<00:03, 16.77it/s] 92%|█████████▏| 535/584 [00:33<00:02, 16.77it/s] 92%|█████████▏| 537/584 [00:33<00:02, 16.77it/s] 92%|█████████▏| 539/584 [00:33<00:02, 16.77it/s] 93%|█████████▎| 541/584 [00:34<00:02, 16.78it/s] 93%|█████████▎| 543/584 [00:34<00:02, 16.77it/s] 93%|█████████▎| 545/584 [00:34<00:02, 16.78it/s] 94%|█████████▎| 547/584 [00:34<00:02, 16.77it/s] 94%|█████████▍| 549/584 [00:34<00:02, 16.77it/s] 94%|█████████▍| 551/584 [00:34<00:01, 16.77it/s] 95%|█████████▍| 553/584 [00:34<00:01, 16.76it/s] 95%|█████████▌| 555/584 [00:34<00:01, 16.76it/s] 95%|█████████▌| 557/584 [00:35<00:01, 16.71it/s] 96%|█████████▌| 559/584 [00:35<00:01, 16.71it/s] 96%|█████████▌| 561/584 [00:35<00:01, 16.72it/s] 96%|█████████▋| 563/584 [00:35<00:01, 16.74it/s] 97%|█████████▋| 565/584 [00:35<00:01, 16.74it/s] 97%|█████████▋| 567/584 [00:35<00:01, 16.75it/s] 97%|█████████▋| 569/584 [00:35<00:00, 16.75it/s] 98%|█████████▊| 571/584 [00:35<00:00, 16.75it/s] 98%|█████████▊| 573/584 [00:36<00:00, 16.75it/s] 98%|█████████▊| 575/584 [00:36<00:00, 16.75it/s] 99%|█████████▉| 577/584 [00:36<00:00, 16.75it/s] 99%|█████████▉| 579/584 [00:36<00:00, 16.75it/s] 99%|█████████▉| 581/584 [00:36<00:00, 16.75it/s]100%|█████████▉| 583/584 [00:36<00:00, 16.81it/s][INFO|trainer.py:2662] 2026-01-14 14:53:50,432 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                 100%|██████████| 584/584 [00:36<00:00, 16.81it/s]100%|██████████| 584/584 [00:36<00:00, 15.93it/s]
+[INFO|trainer.py:4129] 2026-01-14 14:53:50,436 >> Saving model checkpoint to ./outputs/gpt2/2026-01-14/14-51-31/0/model/final_model
+[INFO|configuration_utils.py:509] 2026-01-14 14:53:50,438 >> Configuration saved in ./outputs/gpt2/2026-01-14/14-51-31/0/model/final_model/config.json
+[INFO|configuration_utils.py:803] 2026-01-14 14:53:50,440 >> Configuration saved in ./outputs/gpt2/2026-01-14/14-51-31/0/model/final_model/generation_config.json
+{'loss': '3.423', 'grad_norm': '4.906', 'learning_rate': '7.277e-06', 'epoch': '0.8562'}
+{'train_runtime': '36.65', 'train_samples_per_second': '127.4', 'train_steps_per_second': '15.93', 'train_loss': '3.416', 'epoch': '1'}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  3.15it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  3.15it/s]
+[INFO|modeling_utils.py:3427] 2026-01-14 14:53:50,768 >> Model weights saved in ./outputs/gpt2/2026-01-14/14-51-31/0/model/final_model/model.safetensors
+[INFO|tokenization_utils_base.py:2180] 2026-01-14 14:53:50,769 >> tokenizer config file saved in ./outputs/gpt2/2026-01-14/14-51-31/0/model/final_model/tokenizer_config.json
+***** train metrics *****
+  epoch                    =        1.0
+  total_flos               =  1136187GF
+  train_loss               =     3.4157
+  train_runtime            = 0:00:36.65
+  train_samples            =       4669
+  train_samples_per_second =    127.391
+  train_steps_per_second   =     15.934
+01/14/2026 14:53:50 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:4452] 2026-01-14 14:53:50,798 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4454] 2026-01-14 14:53:50,798 >>   Num examples = 553
+[INFO|trainer.py:4457] 2026-01-14 14:53:50,798 >>   Batch size = 8
+[WARNING|logging.py:327] 2026-01-14 14:53:50,820 >> `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+  0%|          | 0/70 [00:00<?, ?it/s]  9%|▊         | 6/70 [00:00<00:01, 49.65it/s] 16%|█▌        | 11/70 [00:00<00:01, 44.85it/s] 23%|██▎       | 16/70 [00:00<00:01, 43.29it/s] 30%|███       | 21/70 [00:00<00:01, 42.59it/s] 37%|███▋      | 26/70 [00:00<00:01, 42.20it/s] 44%|████▍     | 31/70 [00:00<00:00, 41.94it/s] 51%|█████▏    | 36/70 [00:00<00:00, 41.80it/s] 59%|█████▊    | 41/70 [00:00<00:00, 41.68it/s] 66%|██████▌   | 46/70 [00:01<00:00, 41.55it/s] 73%|███████▎  | 51/70 [00:01<00:00, 41.47it/s] 80%|████████  | 56/70 [00:01<00:00, 41.45it/s] 87%|████████▋ | 61/70 [00:01<00:00, 41.44it/s] 94%|█████████▍| 66/70 [00:01<00:00, 41.39it/s]100%|██████████| 70/70 [00:02<00:00, 31.49it/s]
+***** eval metrics *****
+  epoch                   =        1.0
+  eval_accuracy           =     0.3884
+  eval_loss               =     3.3789
+  eval_runtime            = 0:00:02.37
+  eval_samples            =        553
+  eval_samples_per_second =    233.314
+  eval_steps_per_second   =     29.533
+  perplexity              =    29.3377
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 701, in main
+    wandb.log({
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/wandb/sdk/lib/preinit.py", line 36, in preinit_wrapper
+    raise wandb.Error(f"You must call wandb.init() before {name}()")
+wandb.errors.errors.Error: You must call wandb.init() before wandb.log()
+Exception ignored in: <function ResourceTracker.__del__ at 0x146290df9800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145403-3xwvne6b
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 160, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 372, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4020, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/modeling_utils.py", line 548, in _get_resolved_checkpoint_files
+    raise OSError(
+OSError: Error no file named model.safetensors, or pytorch_model.bin, found in directory /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/0/model/final_model.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145403-3xwvne6b[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145403-3xwvne6b/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:54:13 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:54:13 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/1/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_1,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/1/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14f810bbd800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145420-s21ayyla
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/1/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145420-s21ayyla[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145420-s21ayyla/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:54:29 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:54:29 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/2/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_2,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/2/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x1479b2101800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145436-73noqnz0
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/2/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145436-73noqnz0[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145436-73noqnz0/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:54:44 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:54:44 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/3/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_3,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/3/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14f2e0bad800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145451-gk8ro4un
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/3/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145451-gk8ro4un[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145451-gk8ro4un/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:55:00 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:55:00 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/4/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_4,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/4/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x1456c0031940>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145507-bh3jf07l
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/4/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145507-bh3jf07l[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145507-bh3jf07l/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:55:15 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:55:15 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/5/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_5,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/5/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x149f3fb99800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145522-gsyvnjxo
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/5/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145522-gsyvnjxo[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145522-gsyvnjxo/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:55:30 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:55:30 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/6/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_6,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/6/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x145bb087d800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145537-5azqeij9
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/6/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145537-5azqeij9[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145537-5azqeij9/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:55:45 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:55:45 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/7/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_7,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/7/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x151180315800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145553-t6696mkb
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/7/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145553-t6696mkb[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145553-t6696mkb/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:56:01 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:56:01 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/8/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_8,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/8/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14ad1a409800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145608-jquc682u
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/8/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145608-jquc682u[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145608-jquc682u/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:56:16 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:56:16 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/9/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_9,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/9/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14fd8dec5800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145623-myq9zm7s
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 286, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 158, in main
+    raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
+FileNotFoundError: Local model path not found: /home/janus/b116ba/b117ba41/projects/model_collapse/outputs/gpt2/2026-01-14/14-51-31/9/model/final_model (cwd=/home/janus/b116ba/b117ba41/projects/model_collapse)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145623-myq9zm7s[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_145623-myq9zm7s/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 14:56:31 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 14:56:31 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/14-51-31/10/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_10,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 740, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/14-51-31/10/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14a7b96a5800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/1/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/2/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/3/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/4/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/5/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/6/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/7/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/8/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/14-51-31/9/model/eval_results.json
+Exception ignored in: <function ResourceTracker.__del__ at 0x14a359ff2480>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+=== JOB_STATISTICS ===
+=== current date     : Wed Jan 14 14:56:33 CET 2026
+= Job-ID             : 3271732 on alex
+= Job-Name           : mc_main
+= Job-Command        : /home/janus/b116ba/b117ba41/projects/model_collapse/run_main_gpu.sbatch
+= Initial workdir    : /home/janus/b116ba/b117ba41/projects/model_collapse
+= Partition (Res)    : a100 (hsc-a100_40)
+= Slurm account      : b116ba with QOS=normal
+= Features           : a100_40
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:05:07
+= Total RAM usage    : 3.5 GiB of assigned  GiB (%)
+= Node list          : a0601
+= Subm/Elig/Start/End: 2026-01-14T14:51:24 / 2026-01-14T14:51:24 / 2026-01-14T14:51:25 / 2026-01-14T14:56:32
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              99.1G   104.9G   209.7G        N/A      64K     500K   1,000K        N/A    
+    /home/vault            33.7M  1048.6G  2097.2G        N/A     308      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207002, 24 %, 11 %, 6164 MiB, 133578 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207408, 0 %, 0 %, 416 MiB, 1931 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207548, 0 %, 0 %, 416 MiB, 1945 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207687, 0 %, 0 %, 416 MiB, 1911 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207810, 0 %, 0 %, 416 MiB, 1932 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 207930, 0 %, 0 %, 416 MiB, 2116 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 208069, 0 %, 0 %, 416 MiB, 1957 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 208203, 0 %, 0 %, 416 MiB, 1912 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 208324, 0 %, 0 %, 416 MiB, 1921 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 208442, 0 %, 0 %, 416 MiB, 2099 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 208576, 0 %, 0 %, 416 MiB, 1944 ms

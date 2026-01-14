@@ -1,0 +1,2092 @@
+### Starting TaskPrologue of job 3271384 on a0601 at Wed Jan 14 10:12:39 CET 2026
+Running on cores 0-15 with governor ondemand
+Wed Jan 14 10:12:39 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   36C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+/var/tmp/slurmd_spool/job3271384/slurm_script: line 9: module: command not found
+/var/tmp/slurmd_spool/job3271384/slurm_script: line 10: module: command not found
+[INFO] Running in WANDB offline mode
+01/14/2026 10:13:00 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:13:00 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/0/model/,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_0,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Using custom data configuration default-2dbfe55f60f14173
+01/14/2026 10:13:00 - INFO - datasets.builder - Using custom data configuration default-2dbfe55f60f14173
+Generating dataset json (/home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2)
+01/14/2026 10:13:00 - INFO - datasets.builder - Generating dataset json (/home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2)
+Downloading and preparing dataset json/default to /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2...
+01/14/2026 10:13:00 - INFO - datasets.builder - Downloading and preparing dataset json/default to /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2...
+Downloading took 0.0 min
+01/14/2026 10:13:00 - INFO - datasets.download.download_manager - Downloading took 0.0 min
+Checksum Computation took 0.0 min
+01/14/2026 10:13:00 - INFO - datasets.download.download_manager - Checksum Computation took 0.0 min
+Generating train split
+01/14/2026 10:13:00 - INFO - datasets.builder - Generating train split
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 4669 examples [00:00, 19288.55 examples/s]Generating train split: 4669 examples [00:00, 18286.00 examples/s]
+Generating test split
+01/14/2026 10:13:00 - INFO - datasets.builder - Generating test split
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 553 examples [00:00, 49280.80 examples/s]
+Unable to verify splits sizes.
+01/14/2026 10:13:00 - INFO - datasets.utils.info_utils - Unable to verify splits sizes.
+Dataset json downloaded and prepared to /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2. Subsequent calls will reuse this data.
+01/14/2026 10:13:00 - INFO - datasets.builder - Dataset json downloaded and prepared to /home/janus/b116ba/b117ba41/.cache/huggingface/datasets/json/default-2dbfe55f60f14173/0.0.0/c181ad2be84b86e0b75142bbe88bda3f4906d051ee75b5ff536a5dba0ffbe8f2. Subsequent calls will reuse this data.
+[INFO|hub.py:361] 2026-01-14 10:13:00,402 >> Offline mode: forcing local_files_only=True
+[INFO|configuration_utils.py:744] 2026-01-14 10:13:00,406 >> loading configuration file config.json from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/config.json
+[INFO|configuration_utils.py:816] 2026-01-14 10:13:00,406 >> Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "5.0.0.dev0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|hub.py:361] 2026-01-14 10:13:00,406 >> Offline mode: forcing local_files_only=True
+[INFO|configuration_utils.py:744] 2026-01-14 10:13:00,408 >> loading configuration file config.json from cache at /home/janus/b116ba/b117ba41/.cache/huggingface/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e/config.json
+[INFO|configuration_utils.py:816] 2026-01-14 10:13:00,408 >> Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "5.0.0.dev0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|hub.py:361] 2026-01-14 10:13:00,408 >> Offline mode: forcing local_files_only=True
+[INFO|tokenization_utils_base.py:1605] 2026-01-14 10:13:00,411 >> Offline mode: forcing local_files_only=True
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 420, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 372, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4020, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/modeling_utils.py", line 600, in _get_resolved_checkpoint_files
+    raise OSError(
+OSError: openai-community/gpt2 does not appear to have a file named model.safetensors or model.safetensors.index.json and thus cannot be loaded with `safetensors`. Please do not set `use_safetensors=True`.
+Exception ignored in: <function ResourceTracker.__del__ at 0x14c07262d760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101309-4m5014m7
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/0/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/0/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101309-4m5014m7[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101309-4m5014m7/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:13:19 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:13:19 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/1/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_1,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/1/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x1547042a5760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101326-6xynf56u
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/1/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/1/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101326-6xynf56u[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101326-6xynf56u/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:13:35 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:13:35 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/2/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_2,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/2/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x1463048c1760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101342-onimcigh
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/2/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/2/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101342-onimcigh[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101342-onimcigh/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:13:51 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:13:51 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/3/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_3,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/3/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14f395421760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101358-9f4b0xi2
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/3/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/3/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101358-9f4b0xi2[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101358-9f4b0xi2/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:14:07 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:14:07 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/4/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_4,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/4/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14d256b5d760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101414-acbapmlw
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/4/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/4/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101414-acbapmlw[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101414-acbapmlw/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:14:22 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:14:22 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/5/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_5,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/5/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14cbede4d760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101429-6hohjvs9
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/5/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/5/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101429-6hohjvs9[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101429-6hohjvs9/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:14:37 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:14:37 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/6/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_6,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/6/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x1510d4045760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101445-yi7x4vjp
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/6/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/6/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101445-yi7x4vjp[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101445-yi7x4vjp/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:14:53 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:14:53 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/7/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_7,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/7/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14e2bb951760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101501-nb2xogvu
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/7/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/7/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101501-nb2xogvu[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101501-nb2xogvu/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:15:09 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:15:09 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/8/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_8,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/8/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x145bae1cd760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101516-8p9wqzoz
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/8/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/8/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101516-8p9wqzoz[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101516-8p9wqzoz/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:15:24 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:15:24 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/9/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_9,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/9/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14a6d2675760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101531-t81jqlek
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/9/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-14/10-12-46/9/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101531-t81jqlek[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260114_101531-t81jqlek/logs[0m
+[INFO] Running in WANDB offline mode
+01/14/2026 10:15:39 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+01/14/2026 10:15:39 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+enable_jit_checkpoint=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=IntervalStrategy.NO,
+eval_use_gather_object=False,
+fp16=False,
+fp16_full_eval=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_num_input_tokens_seen=no,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+liger_kernel_config=None,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=None,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+neftune_noise_alpha=None,
+num_train_epochs=1.0,
+optim=OptimizerNames.ADAMW_TORCH_FUSED,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./outputs/gpt2/2026-01-14/10-12-46/10/model,
+parallelism_config=None,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+project=huggingface,
+push_to_hub=False,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=train_iteration_10,
+save_on_each_node=False,
+save_only_model=False,
+save_steps=2000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+trackio_space_id=trackio,
+use_cache=False,
+use_cpu=False,
+use_liger_kernel=False,
+warmup_ratio=None,
+warmup_steps=0,
+weight_decay=0.0,
+)
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 728, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 367, in main
+    raw_datasets = load_dataset(
+                   ^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1492, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 1137, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 913, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/load.py", line 527, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 708, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 601, in from_patterns
+    resolve_pattern(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/datasets/data_files.py", line 390, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/janus/b116ba/b117ba41/projects/model_collapse/./outputs/gpt2/2026-01-14/10-12-46/10/data.json'
+Exception ignored in: <function ResourceTracker.__del__ at 0x14c916b69760>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/0/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/1/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/2/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/3/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/4/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/5/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/6/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/7/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/8/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-14/10-12-46/9/model/eval_results.json
+Exception ignored in: <function ResourceTracker.__del__ at 0x1487d8b6a480>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+=== JOB_STATISTICS ===
+=== current date     : Wed Jan 14 10:15:41 CET 2026
+= Job-ID             : 3271384 on alex
+= Job-Name           : mc_main
+= Job-Command        : /home/janus/b116ba/b117ba41/projects/model_collapse/run_main_gpu.sbatch
+= Initial workdir    : /home/janus/b116ba/b117ba41/projects/model_collapse
+= Partition (Res)    : a100 (hsc-a100_40)
+= Slurm account      : b116ba with QOS=normal
+= Features           : a100_40
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:03:04
+= Total RAM usage    : 1.9 GiB of assigned  GiB (%)
+= Node list          : a0601
+= Subm/Elig/Start/End: 2026-01-14T10:12:36 / 2026-01-14T10:12:36 / 2026-01-14T10:12:37 / 2026-01-14T10:15:41
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              99.1G   104.9G   209.7G        N/A      64K     500K   1,000K        N/A    
+    /home/vault            33.4M  1048.6G  2097.2G        N/A     208      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 188619, 0 %, 0 %, 416 MiB, 4695 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 188759, 0 %, 0 %, 416 MiB, 2047 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 188915, 0 %, 0 %, 416 MiB, 1911 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189037, 0 %, 0 %, 416 MiB, 1932 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189154, 0 %, 0 %, 416 MiB, 1910 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189296, 0 %, 0 %, 416 MiB, 1930 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189440, 0 %, 0 %, 416 MiB, 1942 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189561, 0 %, 0 %, 416 MiB, 1891 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189681, 0 %, 0 %, 416 MiB, 1836 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189821, 0 %, 0 %, 416 MiB, 1896 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 189957, 0 %, 0 %, 416 MiB, 1961 ms
