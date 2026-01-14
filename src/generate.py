@@ -157,12 +157,21 @@ def main():
     if not model_dir.is_dir():
         raise FileNotFoundError(f"Local model path not found: {model_dir} (cwd={Path.cwd()})")
 
+    has_safetensors = (model_dir / "model.safetensors").exists() or (model_dir / "model.safetensors.index.json").exists()
+    has_bin = (model_dir / "pytorch_model.bin").exists() or (model_dir / "pytorch_model.bin.index.json").exists()
+
+    if not (has_safetensors or has_bin):
+        raise FileNotFoundError(f"No model weights found in {model_dir} (expected model.safetensors or pytorch_model.bin)")
+
+    # Wichtig: use_safetensors nur erzwingen, wenn wir sicher sind
+    use_st = True if has_safetensors else False
+
     model = AutoModelForCausalLM.from_pretrained(
         str(model_dir),
         torch_dtype=torch_dtype,
         low_cpu_mem_usage=args.low_cpu_mem_usage,
         local_files_only=True,
-        use_safetensors=False,
+        use_safetensors=use_st,
     )
     model.to(args.device)
     model.eval()
