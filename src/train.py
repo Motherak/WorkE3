@@ -698,12 +698,19 @@ def main():
 
         trainer.log_metrics("eval", metrics)
         trainer.save_metrics("eval", metrics)
-        wandb.log({
-            "perplexity": perplexity,
-            "eval_accuracy": metrics["eval_accuracy"],
-                   }, step=data_args.iteration)
+        if wandb.run is not None:
+            wandb.log({
+                "perplexity": perplexity,
+                "eval_accuracy": metrics.get("eval_accuracy"),
+            }, step=data_args.iteration)
+        else:
+            logger.info("W&B not initialized -> skip wandb.log(eval)")
 
-    wandb.log({"data_selection_strategy": data_args.data_selection_strategy})
+    if wandb.run is not None:
+        wandb.log({"data_selection_strategy": data_args.data_selection_strategy})
+    else:
+        logger.info("W&B not initialized -> skip wandb.log(strategy)")
+
 
     if 'gt_cls_score' in train_dataset.features:
         human_samples = train_dataset.filter(
