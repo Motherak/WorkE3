@@ -1,0 +1,516 @@
+### Starting TaskPrologue of job 3268985 on a0601 at Tue Jan 13 02:54:40 CET 2026
+Running on cores 0-15 with governor ondemand
+Tue Jan 13 02:54:40 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   36C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+/var/tmp/slurmd_spool/job3268985/slurm_script: line 9: module: command not found
+/var/tmp/slurmd_spool/job3268985/slurm_script: line 10: module: command not found
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x149c2ff298a0>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025506-vmq05rpb
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/0/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/0/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025506-vmq05rpb[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025506-vmq05rpb/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x1490e8a89800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025522-1vla9a34
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/1/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/1/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025522-1vla9a34[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025522-1vla9a34/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x14bb56155800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025538-4igv2r49
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/2/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/2/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025538-4igv2r49[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025538-4igv2r49/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x1516352b9800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025552-o5ja7nye
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/3/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/3/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025552-o5ja7nye[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025552-o5ja7nye/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x154e74051800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025607-0cxpwi4f
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/4/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/4/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025607-0cxpwi4f[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025607-0cxpwi4f/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x152041c7d800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025621-xcragfh7
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/5/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/5/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025621-xcragfh7[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025621-xcragfh7/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x148737325800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025635-0ekh464z
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/6/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/6/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025635-0ekh464z[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025635-0ekh464z/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x14f7fa3c1800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025650-ii8mhp3s
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/7/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/7/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025650-ii8mhp3s[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025650-ii8mhp3s/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x1471b0b51800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025704-3d85uyn9
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/8/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/8/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025704-3d85uyn9[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025704-3d85uyn9/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x14d46ea7d800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025719-gp3odhty
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 129, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/9/model/final_model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 277, in <module>
+    main()
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/generate.py", line 155, in main
+    model = AutoModelForCausalLM.from_pretrained(args.model_path,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 275, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/hub.py", line 468, in cached_files
+    raise OSError(f"{e}") from e
+OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './outputs/gpt2/2026-01-13/02-54-47/9/model/final_model'. Use `repo_type` argument if needed.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025719-gp3odhty[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../vault/b116ba/b117ba41/model_collapse/runs/wandb/offline-run-20260113_025719-gp3odhty/logs[0m
+[INFO] Running in WANDB offline mode
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/projects/model_collapse/src/train.py", line 48, in <module>
+    from transformers.utils import check_min_version, send_example_telemetry
+ImportError: cannot import name 'send_example_telemetry' from 'transformers.utils' (/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/transformers/utils/__init__.py)
+Exception ignored in: <function ResourceTracker.__del__ at 0x14e7b41dd800>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/0/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/1/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/2/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/3/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/4/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/5/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/6/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/7/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/8/model/eval_results.json
+File not found: ./outputs/gpt2/2026-01-13/02-54-47/9/model/eval_results.json
+Exception ignored in: <function ResourceTracker.__del__ at 0x146a0a672520>
+Traceback (most recent call last):
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/home/janus/b116ba/b117ba41/venvs/model_collapse/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'
+=== JOB_STATISTICS ===
+=== current date     : Tue Jan 13 02:57:28 CET 2026
+= Job-ID             : 3268985 on alex
+= Job-Name           : mc_main
+= Job-Command        : /home/janus/b116ba/b117ba41/projects/model_collapse/run_main_gpu.sbatch
+= Initial workdir    : /home/janus/b116ba/b117ba41/projects/model_collapse
+= Partition (Res)    : a100 (hsc-a100_40)
+= Slurm account      : b116ba with QOS=normal
+= Features           : a100_40
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:02:47
+= Total RAM usage    : 1.9 GiB of assigned  GiB (%)
+= Node list          : a0601
+= Subm/Elig/Start/End: 2026-01-13T02:54:39 / 2026-01-13T02:54:39 / 2026-01-13T02:54:40 / 2026-01-13T02:57:27
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              99.1G   104.9G   209.7G        N/A      64K     500K   1,000K        N/A    
+    /home/vault            65.8M  1048.6G  2097.2G        N/A     108      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
